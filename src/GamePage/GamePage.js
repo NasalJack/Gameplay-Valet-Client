@@ -6,7 +6,7 @@ import './GamePage.css'
 class GamePage extends React.Component {
 
   render() {
-    const game = this.props.list[this.props.match.params.id]
+    const game = this.props.list.find(item => Number(item.id) === Number(this.props.match.params.id))
     const genres = [];
     game.genres.forEach(genre => genres.push(<li key={genre}>{genre}</li>))
     const route = this.props.match.params.id
