@@ -9,6 +9,7 @@ import PageNotFound from './PageNotFound/PageNotFound';
 import NavBar from './NavBar/NavBar';
 import GamesListPage from './GamesListPage/GamesListPage';
 import GamePage from './GamePage/GamePage';
+import Footer from './Footer/Footer';
 
 import store from './dummy-store'
 
@@ -32,6 +33,7 @@ class App extends React.Component {
           <Route component={PageNotFound} />
         </Switch>
         <Route path='/' component={NavBar} />
+        <Route path='/game/:id' component={Footer} />
       </main>
     );
   }
