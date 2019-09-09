@@ -1,11 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 import './NavBar.css'
 
-const NavBar = () => {
+const NavBar = (props) => {
   return (
     <nav className='NavBar' role="navigation">
-      Nav
+      <div>Main</div>
+      <div>All Games</div>
+      <div>Login</div>
     </nav>
   )
 }
