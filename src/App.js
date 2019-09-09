@@ -8,6 +8,7 @@ import LandingPage from './LandingPage/LandingPage';
 import PageNotFound from './PageNotFound/PageNotFound';
 import NavBar from './NavBar/NavBar';
 import GamesListPage from './GamesListPage/GamesListPage';
+import GamePage from './GamePage/GamePage';
 
 import store from './dummy-store'
 
@@ -27,6 +28,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={LandingPage} />
           <Route exact path='/games' render={()=> <GamesListPage list={this.state.gamesList} />}/>
+          <Route exact path='/game/:id' render={()=> <GamePage list={this.state.gamesList}/>}/>
           <Route component={PageNotFound} />
         </Switch>
         <Route path='/' component={NavBar} />

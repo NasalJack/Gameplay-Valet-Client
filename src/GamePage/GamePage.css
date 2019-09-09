@@ -1,0 +1,29 @@
+.GamePage header {
+  padding: 12% 0;
+}
+
+.GamePage section {
+  min-height: 200px;
+  padding: 6% 0;
+  background-color: #bbb;
+}
+
+.GamePage section:nth-child(even) {
+  background-color: #ddd;
+}
+
+.GamePage button {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+.GamePage .button-box {
+  margin-top: 30px;
+}
+
+.GamePage .banner {
+  height: 100px;
+  font-size: 12px;
+}

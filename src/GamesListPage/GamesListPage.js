@@ -5,19 +5,14 @@ import GamesListEntry from '../GamesListEntry/GamesListEntry'
 import './GamesListPage.css';
 class GamesListPage extends React.Component {
 
-  gamesList = []
-
-  renderGamesList = () => {
+  render() {
+    const gamesList = [];
     this.props.list.forEach(game => {
-      this.gamesList.push(
+      gamesList.push(
           <GamesListEntry key={game.id} title={game.title} description={game.description} rating={game.rating} />
       )
     });
-  }
 
-  render() {
-    this.gamesList.length = 0;
-    this.renderGamesList();
     return (
       <div className='GamesListPage'>
         <header className="banner" role="banner">
@@ -37,7 +32,7 @@ class GamesListPage extends React.Component {
               </select>
           </label>
         </section>
-        {this.gamesList}
+        {gamesList}
       </div>
     )
   }

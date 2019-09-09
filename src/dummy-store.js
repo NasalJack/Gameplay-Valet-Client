@@ -7,6 +7,7 @@ const store = [
     tips: 'tips here',
     rating: '5',
     description: 'short description here',
+    longDescription: 'there is a lot more information about the game contained here',
     img: 'link to an image here',
     genres: ['a', 'b', 'c']
   },
@@ -18,6 +19,7 @@ const store = [
     tips: 'tips here',
     rating: '2',
     description: 'short description here',
+    longDescription: 'there is a lot more information about the game contained here',
     img: 'link to an image here',
     genres: ['a', 'd', 'f']
   },
@@ -29,6 +31,7 @@ const store = [
     tips: 'tips here',
     rating: '4',
     description: 'short description here',
+    longDescription: 'there is a lot more information about the game contained here',
     img: 'link to an image here',
     genres: ['d', 'b', 'e']
   }
