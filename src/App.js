@@ -12,6 +12,8 @@ import GamePage from './GamePage/GamePage';
 import Footer from './Footer/Footer';
 import RulesPage from './RulesPage/RulesPage';
 import TipsPage from './TipsPage/TipsPage';
+import LoginPage from './LoginPage/LoginPage';
+import SignupPage from './SignupPage/SignupPage';
 
 import store from './dummy-store'
 
@@ -30,6 +32,8 @@ class App extends React.Component {
       <main role="main" className="App">
         <Switch>
           <Route exact path='/' component={LandingPage} />
+          <Route exact path='/login' component={LoginPage} />
+          <Route exact path='/signup' component={SignupPage} />
           <Route exact path='/games' render={()=> <GamesListPage list={this.state.gamesList} />}/>
           <Route exact path='/game/:id' render={()=> <GamePage list={this.state.gamesList}/>}/>
           <Route exact path='/game/:id/rules' component={RulesPage} />

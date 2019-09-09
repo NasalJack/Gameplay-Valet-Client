@@ -1,0 +1,35 @@
+.LoginPage header {
+  padding: 12% 0;
+}
+
+.LoginPage section {
+  min-height: 200px;
+  padding: 6% 0;
+  background-color: #bbb;
+}
+
+.LoginPage section:nth-child(even) {
+  background-color: #ddd;
+}
+
+.LoginPage button {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+.LoginPage .banner {
+  height: 100px;
+  font-size: 12px;
+}
+
+.LoginPage .password input {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.LoginPage .alternative {
+  margin-top: 30px;
+}
+
