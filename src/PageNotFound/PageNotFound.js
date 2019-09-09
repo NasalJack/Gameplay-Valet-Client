@@ -5,7 +5,9 @@ class PageNotFound extends React.Component {
 
   render() {
     return (
-      <header>Page not found</header>
+      <div className='PageNoteFound'>
+        <h1>Page not found</h1>
+      </div>
     )
   }
 }

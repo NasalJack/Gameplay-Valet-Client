@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {Link} from 'react-router-dom';
+
 import './LandingPage.css'
 
 class LandingPage extends React.Component {
@@ -16,7 +18,9 @@ class LandingPage extends React.Component {
         </section>
 
         <section className='landing-buttons'>
-            <button>View Games</button>
+            <Link to='/games'>
+              <button>View Games</button>
+            </Link>
             <div className='button-box'>
               <button>Login</button>
               <button>Signup</button>

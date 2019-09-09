@@ -7,6 +7,8 @@ import './App.css';
 import LandingPage from './LandingPage/LandingPage';
 import PageNotFound from './PageNotFound/PageNotFound';
 import NavBar from './NavBar/NavBar';
+import GamesListPage from './GamesListPage/GamesListPage';
+
 import store from './dummy-store'
 
 
@@ -16,7 +18,7 @@ class App extends React.Component {
   state = {
     loggedIn: false,
     loading: true,
-    gameList: store
+    gamesList: store
   }
 
   render() {
@@ -24,6 +26,7 @@ class App extends React.Component {
       <main role="main" className="App">
         <Switch>
           <Route exact path='/' component={LandingPage} />
+          <Route exact path='/games' render={()=> <GamesListPage list={this.state.gamesList} />}/>
           <Route component={PageNotFound} />
         </Switch>
         <Route path='/' component={NavBar} />

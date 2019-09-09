@@ -1,6 +1,7 @@
 const store = [
   {
-    game: 'Example 1',
+    id: 1,
+    title: 'Example 1',
     rules: 'rules here',
     quickRules: 'quick rules here',
     tips: 'tips here',
@@ -10,7 +11,8 @@ const store = [
     genres: ['a', 'b', 'c']
   },
   {
-    game: 'Example 2',
+    id: 2,
+    title: 'Example 2',
     rules: 'rules here',
     quickRules: 'quick rules here',
     tips: 'tips here',
@@ -20,7 +22,8 @@ const store = [
     genres: ['a', 'd', 'f']
   },
   {
-    game: 'Example 3',
+    id: 3,
+    title: 'Example 3',
     rules: 'rules here',
     quickRules: 'quick rules here',
     tips: 'tips here',
