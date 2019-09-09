@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Switch } from 'react-router-dom';
+
+import 'normalize.css'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import LandingPage from './LandingPage/LandingPage';
+import PageNotFound from './PageNotFound/PageNotFound';
+import NavBar from './NavBar/NavBar';
+import store from './dummy-store'
+
+
+
+class App extends React.Component {
+
+  state = {
+    loggedIn: false,
+    loading: true,
+    gameList: store
+  }
+
+  render() {
+    return (
+      <main role="main" className="App">
+        <Switch>
+          <Route exact path='/' component={LandingPage} />
+          <Route component={PageNotFound} />
+        </Switch>
+        <Route path='/' component={NavBar} />
+      </main>
+    );
+  }
 }
 
 export default App;
