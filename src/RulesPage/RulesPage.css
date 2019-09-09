@@ -1,0 +1,19 @@
+.RulesPage header {
+  padding: 12% 0;
+}
+
+.RulesPage section {
+  min-height: 200px;
+  padding: 6% 0;
+  background-color: #bbb;
+}
+
+.RulesPage section:nth-child(even) {
+  background-color: #ddd;
+}
+
+.RulesPage .banner {
+  height: 100px;
+  font-size: 12px;
+}
+

@@ -10,6 +10,8 @@ import NavBar from './NavBar/NavBar';
 import GamesListPage from './GamesListPage/GamesListPage';
 import GamePage from './GamePage/GamePage';
 import Footer from './Footer/Footer';
+import RulesPage from './RulesPage/RulesPage';
+import TipsPage from './TipsPage/TipsPage';
 
 import store from './dummy-store'
 
@@ -30,6 +32,8 @@ class App extends React.Component {
           <Route exact path='/' component={LandingPage} />
           <Route exact path='/games' render={()=> <GamesListPage list={this.state.gamesList} />}/>
           <Route exact path='/game/:id' render={()=> <GamePage list={this.state.gamesList}/>}/>
+          <Route exact path='/game/:id/rules' component={RulesPage} />
+          <Route exact path='/game/:id/tips' component={TipsPage} />
           <Route component={PageNotFound} />
         </Switch>
         <Route path='/' component={NavBar} />
