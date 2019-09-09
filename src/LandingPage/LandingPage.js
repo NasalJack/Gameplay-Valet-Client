@@ -22,8 +22,12 @@ class LandingPage extends React.Component {
               <button>View Games</button>
             </Link>
             <div className='button-box'>
-              <button>Login</button>
-              <button>Signup</button>
+              <Link to='/login'>
+                <button>Login</button>
+              </Link>
+              <Link to='/signup'>
+                <button>Signup</button>
+              </Link>
             </div>
         </section>
       </div>

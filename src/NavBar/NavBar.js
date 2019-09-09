@@ -6,9 +6,9 @@ import './NavBar.css'
 const NavBar = (props) => {
   return (
     <nav className='NavBar' role="navigation">
-      <div>Main</div>
-      <div>All Games</div>
-      <div>Login</div>
+      <Link to='/'>Main</Link>
+      <Link to='/games'>All Games</Link>
+      <Link to='/login'>Login</Link>
     </nav>
   )
 }

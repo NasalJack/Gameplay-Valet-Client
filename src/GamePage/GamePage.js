@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import './GamePage.css'
 
@@ -8,7 +8,8 @@ class GamePage extends React.Component {
   render() {
     const game = this.props.list[this.props.match.params.id]
     const genres = [];
-    game.genres.forEach(genre => genres.push(<li>{genre}</li>))
+    game.genres.forEach(genre => genres.push(<li key={genre}>{genre}</li>))
+    const route = this.props.match.params.id
 
     return (
       <div className='GamePage'>
@@ -21,13 +22,19 @@ class GamePage extends React.Component {
         <section>{game.longDescription}</section>
 
         <section>
-            <button>Quick Rules</button>
+            {/* <button>Quick Rules</button> */}
             <div className='button-box'>
-              <button>Full Rules</button>
-              <button>Tips</button>
+              <Link to={route+'/rules'}>
+                <button>Rules</button>
+              </Link>
+              <Link to={route+'/tips'}>
+                <button>Tips</button>
+              </Link>
             </div>
             <div className='button-box'>
-              <button>Notes</button>
+              <Link to={route+'/notes'}>
+                <button>Notes</button>
+              </Link>
               <button>Add/remove</button>
             </div>
         </section>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import './Footer.css'
 
@@ -7,15 +7,16 @@ class Footer extends React.Component {
   
 
   render() {
+    const route='/game/'+this.props.match.params.id
     return(
       <footer className='Footer'>
-        <div>Main</div>
-        <div>Rules</div>
-        <div>Tips</div>
-        <div>Notes</div>
+        <Link to={route}>Main</Link>
+        <Link to={route+'/rules'}>Rules</Link>
+        <Link to={route+'/tips'}>Tips</Link>
+        <Link to={route+'/notes'}>Notes</Link>
       </footer>
     )
   }
 }
 
-export default Footer;
+export default withRouter(Footer);

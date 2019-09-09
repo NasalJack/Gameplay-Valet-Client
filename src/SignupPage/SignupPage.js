@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './SignupPage.css'
 
@@ -13,16 +14,18 @@ const SignupPage = () => {
           <form>
               <label>
                 Username
-                <input type="text" />
+                <input required type="text" />
               </label>
               <label className="password">
                   Password
-                  <input type="text" />
+                  <input required type="text" />
               </label>
               <br />
               <button type="submit">Submit</button>
           </form>
-          <button className="alternative">Login instead</button>
+          <Link to='/login'>
+            <button className="alternative">Login instead</button>
+          </Link>
         </section>
     </div>
   )
