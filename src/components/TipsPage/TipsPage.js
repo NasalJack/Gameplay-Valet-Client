@@ -1,35 +1,33 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
+import ValetApiService from '../../services/valet-api-service';
 
 import './TipsPage.css';
 
-const TipsPage = (props) => {
+class TipsPage extends React.Component {
+
+  componentDidMount() {
+    if(this.props.id === Number(this.props.match.params.id)) return
+    ValetApiService.getGame(this.props.match.params.id)
+      .then(game => {
+        return this.props.setCurrentGame(game)
+      })
+  }
+
+  render() {
   return (
-    <div className='TipsPage'>
-      <header className="banner" role="banner">
-            <h1>Tips</h1>
-        </header>
+      <div className='TipsPage'>
+        <header className="banner" role="banner">
+              <h1>Tips</h1>
+          </header>
 
-        <section>
-            Section 1
-        </section>
-
-        <section>
-            Section 2
-        </section>
-
-        <section>
-            Section 3
-        </section>
-
-        <section>
-            Project 3
-        </section>
-        
-        <section>
-            Section 4
-        </section>
-    </div>
-  )
+          <section>
+              {this.props.tips}
+          </section>
+      </div>
+    )
+  }
 }
 
-export default TipsPage
+export default withRouter(TipsPage)

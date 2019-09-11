@@ -64,8 +64,16 @@ class App extends React.Component {
             genres = {game.genres}
             rating = {game.rating}
           />}/>
-          <Route exact path='/game/:id/rules' component={RulesPage} />
-          <Route exact path='/game/:id/tips' component={TipsPage} />
+          <Route exact path='/game/:id/rules' render={()=> <RulesPage
+            setCurrentGame = {this.setCurrentGame}
+            rules={game.rules}
+            id={game.id}
+          />} />
+          <Route exact path='/game/:id/tips' render={()=> <TipsPage 
+            setCurrentGame = {this.setCurrentGame}
+            tips={game.tips}
+            id={game.id}
+          />}/>
           <Route exact path='/game/:id/notes/:userId' component={NotesPage} />
           <Route component={PageNotFound} />
         </Switch>

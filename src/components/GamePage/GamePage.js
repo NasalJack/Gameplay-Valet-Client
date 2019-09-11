@@ -6,20 +6,12 @@ import './GamePage.css'
 
 class GamePage extends React.Component {
 
-  state = {
-    loading: true
-  }
-
   componentDidMount() {
-    if(this.props.id === Number(this.props.match.params.id)) {
-      return this.setState({loading: false})
-    }
+    if(this.props.id === Number(this.props.match.params.id)) return
     ValetApiService.getGame(this.props.match.params.id)
       .then(game => {
         return this.props.setCurrentGame(game)
       })
-      .then((res) => this.setState({loading: false}))
-      
   }
 
   render() {
@@ -29,7 +21,7 @@ class GamePage extends React.Component {
     return (
       <div className='GamePage'>
         <header className="banner" role="banner">
-          <h1>{this.state.loading ? 'loading...' : title}</h1>
+          <h1>{!title ? 'loading...' : title}</h1>
           <div>rating: {rating}</div>
           <ul>{genres}</ul>
         </header>
