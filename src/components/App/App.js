@@ -4,20 +4,20 @@ import { Route, Switch } from 'react-router-dom';
 import 'normalize.css'
 import './App.css';
 
-import LandingPage from './LandingPage/LandingPage';
-import PageNotFound from './PageNotFound/PageNotFound';
-import NavBar from './NavBar/NavBar';
-import GamesListPage from './GamesListPage/GamesListPage';
-import GamePage from './GamePage/GamePage';
-import Footer from './Footer/Footer';
-import RulesPage from './RulesPage/RulesPage';
-import TipsPage from './TipsPage/TipsPage';
-import LoginPage from './LoginPage/LoginPage';
-import SignupPage from './SignupPage/SignupPage';
-import NotesPage from './NotesPage/NotesPage';
-import MyGamesPage from './MyGamesPage/MyGamesPage';
+import LandingPage from '../LandingPage/LandingPage';
+import PageNotFound from '../PageNotFound/PageNotFound';
+import NavBar from '../NavBar/NavBar';
+import GamesListPage from '../GamesListPage/GamesListPage';
+import GamePage from '../GamePage/GamePage';
+import Footer from '../Footer/Footer';
+import RulesPage from '../RulesPage/RulesPage';
+import TipsPage from '../TipsPage/TipsPage';
+import LoginPage from '../LoginPage/LoginPage';
+import SignupPage from '../SignupPage/SignupPage';
+import NotesPage from '../NotesPage/NotesPage';
+import MyGamesPage from '../MyGamesPage/MyGamesPage';
 
-import store from './dummy-store'
+import store from '../../dummy-store'
 
 
 
