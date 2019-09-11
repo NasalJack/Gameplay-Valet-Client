@@ -1,25 +1,40 @@
-import React from 'react'
+import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import ValetApiService from '../../services/valet-api-service';
 
 import './GamePage.css'
 
 class GamePage extends React.Component {
 
+  state = {
+    loading: true
+  }
+
+  componentDidMount() {
+    if(this.props.id === Number(this.props.match.params.id)) {
+      return this.setState({loading: false})
+    }
+    ValetApiService.getGame(this.props.match.params.id)
+      .then(game => {
+        return this.props.setCurrentGame(game)
+      })
+      .then((res) => this.setState({loading: false}))
+      
+  }
+
   render() {
-    const game = this.props.list.find(item => Number(item.id) === Number(this.props.match.params.id))
-    const genres = [];
-    game.genres.forEach(genre => genres.push(<li key={genre}>{genre}</li>))
-    const route = this.props.match.params.id
+    const route = this.props.match.params.id;
+    const { rating, genres, long_description, title } = this.props
 
     return (
       <div className='GamePage'>
         <header className="banner" role="banner">
-          <h1>{game.title}</h1>
-          <div>rating: {game.rating}</div>
+          <h1>{this.state.loading ? 'loading...' : title}</h1>
+          <div>rating: {rating}</div>
           <ul>{genres}</ul>
         </header>
 
-        <section>{game.longDescription}</section>
+        <section>{long_description}</section>
 
         <section>
             {/* <button>Quick Rules</button> */}

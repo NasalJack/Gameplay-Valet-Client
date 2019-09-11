@@ -8,9 +8,9 @@ class GamesListPage extends React.Component {
   render() {
     const gamesList = [];
     this.props.list.forEach(game => {
-      const {id, title, description, rating} = game
+      const {id, title, short_description, rating} = game
       gamesList.push(
-          <GamesListEntry key={id} id={id} title={title} description={description} rating={rating} />
+          <GamesListEntry key={id} id={id} title={title} short_description={short_description} rating={rating} />
       )
     });
 

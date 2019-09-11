@@ -16,6 +16,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
 import NotesPage from '../NotesPage/NotesPage';
 import MyGamesPage from '../MyGamesPage/MyGamesPage';
+import ValetApiService from '../../services/valet-api-service';
 
 import store from '../../dummy-store'
 
@@ -26,10 +27,27 @@ class App extends React.Component {
   state = {
     loggedIn: false,
     loading: true,
-    gamesList: store.games
+    gamesList: store.games,
+    currentGame: {
+      rating: null, 
+      genres: null,
+      long_description: null,
+      title: null
+    }
   }
 
+  componentDidMount() {
+    ValetApiService.getAllGames()
+      .then(games => {this.setState({gamesList: games})})
+  }
+
+  setCurrentGame = (game) => {
+    this.setState({currentGame: game})
+  }
+
+
   render() {
+    const game = this.state.currentGame;
     return (
       <main role="main" className="App">
         <Switch>
@@ -38,7 +56,14 @@ class App extends React.Component {
           <Route exact path='/signup' component={SignupPage} />
           <Route exact path='/games' render={()=> <GamesListPage list={this.state.gamesList} />}/>
           <Route exact path='/games/:userId' render={()=> <MyGamesPage list={this.state.gamesList} />}/>
-          <Route exact path='/game/:id' render={()=> <GamePage list={this.state.gamesList}/>}/>
+          <Route exact path='/game/:id' render={()=> <GamePage 
+            setCurrentGame = {this.setCurrentGame}
+            id = {game.id}
+            title = {game.title}
+            long_description = {game.long_description}
+            genres = {game.genres}
+            rating = {game.rating}
+          />}/>
           <Route exact path='/game/:id/rules' component={RulesPage} />
           <Route exact path='/game/:id/tips' component={TipsPage} />
           <Route exact path='/game/:id/notes/:userId' component={NotesPage} />
