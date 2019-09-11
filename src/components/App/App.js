@@ -17,6 +17,7 @@ import SignupPage from '../SignupPage/SignupPage';
 import NotesPage from '../NotesPage/NotesPage';
 import MyGamesPage from '../MyGamesPage/MyGamesPage';
 import ValetApiService from '../../services/valet-api-service';
+import TokenService from '../../services/token-service'
 
 import store from '../../dummy-store'
 
@@ -39,20 +40,32 @@ class App extends React.Component {
   componentDidMount() {
     ValetApiService.getAllGames()
       .then(games => {this.setState({gamesList: games})})
+    const haveToken = TokenService.hasAuthToken()
+    if (haveToken) return this.setState({loggedIn: true})
+    else return this.setState({loggedIn: false})
   }
 
   setCurrentGame = (game) => {
     this.setState({currentGame: game})
   }
 
+  onLoginSuccess = () => {
+    console.log('logging in')
+    this.setState({loggedIn: true})
+  }
+
+  onLogout = () => {
+    TokenService.clearAuthToken();
+    this.setState({loggedIn: false})
+  }
 
   render() {
     const game = this.state.currentGame;
     return (
       <main role="main" className="App">
         <Switch>
-          <Route exact path='/' component={LandingPage} />
-          <Route exact path='/login' component={LoginPage} />
+          <Route exact path='/' render={()=> <LandingPage loggedIn={this.state.loggedIn}/> } />
+          <Route exact path='/login' render={()=> <LoginPage onLoginSuccess={this.onLoginSuccess} /> } />
           <Route exact path='/signup' component={SignupPage} />
           <Route exact path='/games' render={()=> <GamesListPage list={this.state.gamesList} />}/>
           <Route exact path='/games/:userId' render={()=> <MyGamesPage list={this.state.gamesList} />}/>
@@ -77,7 +90,7 @@ class App extends React.Component {
           <Route exact path='/game/:id/notes/:userId' component={NotesPage} />
           <Route component={PageNotFound} />
         </Switch>
-        <Route path='/' component={NavBar} />
+        <Route path='/' render={()=> <NavBar loggedIn={this.state.loggedIn} logout={this.onLogout}/>} />
         <Route path='/game/:id' component={Footer} />
       </main>
     );
