@@ -63,7 +63,10 @@ class App extends React.Component {
 
   setMyGames = () => {
     ValetApiService.getMyGames()
-      .then(myGamesList => this.setState({ myGamesList }))
+      .then(games => {
+        const myGamesList = games.filter(game => game.deleted !== true)
+        this.setState({ myGamesList })
+      })
   }
 
   render() {
@@ -83,6 +86,7 @@ class App extends React.Component {
             long_description = {game.long_description}
             genres = {game.genres}
             rating = {game.rating}
+            setMyGames = {this.setMyGames}
           />}/>
           <Route exact path='/game/:id/rules' render={()=> <RulesPage
             setCurrentGame = {this.setCurrentGame}

@@ -31,6 +31,7 @@ class GamePage extends React.Component {
     ValetApiService.addGameToList(this.props.match.params.id)
       .then(() => {
         this.setState({onUserList: true})
+        this.props.setMyGames()
       })
       .catch(res => this.setState({ error: res.error }))
   }
@@ -39,6 +40,7 @@ class GamePage extends React.Component {
     ValetApiService.removeGameFromList(this.props.match.params.id)
       .then(() => {
         this.setState({onUserList: false})
+        this.props.setMyGames()
       })
       .catch(res => this.setState({ error: res.error }))
   }
