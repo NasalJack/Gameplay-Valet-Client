@@ -19,8 +19,6 @@ import MyGamesPage from '../MyGamesPage/MyGamesPage';
 import ValetApiService from '../../services/valet-api-service';
 import TokenService from '../../services/token-service'
 
-import store from '../../dummy-store'
-
 
 
 class App extends React.Component {
@@ -28,7 +26,8 @@ class App extends React.Component {
   state = {
     loggedIn: false,
     loading: true,
-    gamesList: store.games,
+    gamesList: [],
+    myGamesList: [],
     currentGame: {
       rating: null, 
       genres: null,
@@ -41,7 +40,10 @@ class App extends React.Component {
     ValetApiService.getAllGames()
       .then(games => {this.setState({gamesList: games})})
     const haveToken = TokenService.hasAuthToken()
-    if (haveToken) return this.setState({loggedIn: true})
+    if (haveToken) {
+      this.setState({loggedIn: true})
+      this.setMyGames()
+    }
     else return this.setState({loggedIn: false})
   }
 
@@ -52,11 +54,17 @@ class App extends React.Component {
   onLoginSuccess = () => {
     console.log('logging in')
     this.setState({loggedIn: true})
+    this.setMyGames()
   }
 
   onLogout = () => {
     TokenService.clearAuthToken();
     this.setState({loggedIn: false})
+  }
+
+  setMyGames = () => {
+    ValetApiService.getMyGames()
+      .then(myGamesList => this.setState({ myGamesList }))
   }
 
   render() {
@@ -68,7 +76,7 @@ class App extends React.Component {
           <Route exact path='/login' render={()=> <LoginPage onLoginSuccess={this.onLoginSuccess} /> } />
           <Route exact path='/signup' component={SignupPage} />
           <Route exact path='/games' render={()=> <GamesListPage list={this.state.gamesList} />}/>
-          <Route exact path='/games/:userId' render={()=> <MyGamesPage list={this.state.gamesList} />}/>
+          <Route exact path='/games/:userId' render={()=> <MyGamesPage list={this.state.myGamesList} setMyGames={this.setMyGames}/>}/>
           <Route exact path='/game/:id' render={()=> <GamePage 
             setCurrentGame = {this.setCurrentGame}
             id = {game.id}
@@ -87,7 +95,7 @@ class App extends React.Component {
             tips={game.tips}
             id={game.id}
           />}/>
-          <Route exact path='/game/:id/notes/:userId' component={NotesPage} />
+          <Route exact path='/game/:gameId/notes/:userId' component={NotesPage} />
           <Route component={PageNotFound} />
         </Switch>
         <Route path='/' render={()=> <NavBar loggedIn={this.state.loggedIn} logout={this.onLogout}/>} />

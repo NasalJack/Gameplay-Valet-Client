@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+
 import ValetApiService from '../../services/valet-api-service';
+import TokenService from '../../services/token-service';
 
 import './GamePage.css'
 
@@ -39,7 +41,7 @@ class GamePage extends React.Component {
               </Link>
             </div>
             <div className='button-box'>
-              <Link to={route+'/notes'}>
+              <Link to={route+'/notes/'+TokenService.getUserToken()}>
                 <button>Notes</button>
               </Link>
               <button>Add/remove</button>

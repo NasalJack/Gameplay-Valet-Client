@@ -1,27 +1,35 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import Note from '../Note/Note';
+import ValetApiService from '../../services/valet-api-service';
 
 import './NotesPage.css';
-
-import store from '../../dummy-store';
 
 class NotesPage extends React.Component {
 
   state = {
-    notes: store.notes
+    loading: true,
+    notes: []
+  }
+
+  componentDidMount() {
+    console.log('getting notes')
+    ValetApiService.getNotes(this.props.match.params.gameId)
+      .then(notes => this.setState({ notes }))
   }
 
   render() {
+    const { notes } = this.state
     const noteList = [];
-    this.state.notes.forEach(note => noteList.push(<Note name={note.name} info={note.info} expanded={note.expanded}/>))
+    if (notes.length) notes.forEach(note => noteList.push(<Note key={note.id} name={note.title} info={note.content} expanded={note.expanded}/>))
     return (
       <div className='NotesPage'>
         <header className="banner" role="banner">
               <h1>All Games</h1>
           </header>
           
-          {noteList}
+          {notes.length ? noteList : 'No notes yet'}
 
           <section>
               <button>Add Note</button>
@@ -31,4 +39,4 @@ class NotesPage extends React.Component {
   }
 }
 
-export default NotesPage
+export default withRouter(NotesPage)
