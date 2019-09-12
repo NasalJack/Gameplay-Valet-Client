@@ -48,7 +48,7 @@ const ValetApiService = {
     .then(res => (!res.ok) ? res.json().then(e=> Promise.reject(e)) : res.json())
   },
   deleteNote(id, gameId) {
-    return fetch(`${this.url}/game/${gameId}/user/${TokenService.getUserToken()}`, { 
+    return fetch(`${this.url}/game/${gameId}/user/${TokenService.getUserToken()}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
@@ -59,8 +59,17 @@ const ValetApiService = {
     .then(res => (!res.ok) ? res.json().then(e=> Promise.reject(e)) : res)
 
   },
-  updateNote() {
-
+  updateNote(note, gameId) {
+    console.log(note)
+    return fetch(`${this.url}/game/${gameId}/user/${TokenService.getUserToken()}`, { 
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`
+      },
+      body: JSON.stringify(note)
+    })
+    .then(res => (!res.ok) ? res.json().then(e=> Promise.reject(e)) : res)
   },
   addGameToList() {
 

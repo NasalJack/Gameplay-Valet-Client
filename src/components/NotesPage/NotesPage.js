@@ -40,7 +40,6 @@ class NotesPage extends React.Component {
 
     ValetApiService.addNote(note, this.props.match.params.gameId)
       .then((newNote) => {
-        console.log(newNote)
         this.setState({notes: [...this.state.notes, newNote], addingNote: false})
       })
       .catch(res => this.setState({ error: res.error }))
@@ -52,7 +51,7 @@ class NotesPage extends React.Component {
           const newNotes = this.state.notes.filter(note => note.id !== id)
           this.setState({notes: newNotes})
         })
-        .catch(res => console.log('res is '+res))
+        .catch(res => this.setState({ error: res.error }))
   }
 
   render() {
@@ -69,15 +68,15 @@ class NotesPage extends React.Component {
     const noteAdderForm =  
     <form className="note_adder" onSubmit={(event) => this.handleNoteSubmit(event)}>
       <label>
-        title
+        title:
         <input name='title' type='text' required></input>
       </label>
       <label>
-        content
+        content:
         <textarea name='content' required></textarea>
       </label>
       <button type='submit'>Add Note</button>
-      <button onClick={this.toggleNoteAdder}>Cancel</button>
+      <button type='button' onClick={this.toggleNoteAdder}>Cancel</button>
     </form>
 
     return (
