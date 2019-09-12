@@ -4,15 +4,16 @@ import './Note.css'
 
 const NotePage = (props) => {
 
-  const {name, info, expanded } = props;
+  const {id, title, content} = props.note;
+  const { expandedNote, toggle } = props
 
   return (
     <section className="Note">  
-      <button className='edit'>{expanded ? 'shrink' : 'expand'}</button>
-      <p>{name}</p>
-      <p hidden={expanded ? false : true}>{info}</p>
-      <button hidden={expanded ? false : true}>Delete</button>
-      <button hidden={expanded ? false : true}>Edit</button>
+      <button className='edit' onClick={()=> toggle(id)}>{expandedNote === id ? 'shrink' : 'expand'}</button>
+      <p>{title}</p>
+      <p hidden={expandedNote === id ? false : true}>{content}</p>
+      <button hidden={expandedNote === id ? false : true}>Delete</button>
+      <button hidden={expandedNote === id ? false : true}>Edit</button>
     </section>
   )
 }

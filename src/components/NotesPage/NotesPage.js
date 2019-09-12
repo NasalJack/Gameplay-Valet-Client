@@ -10,7 +10,8 @@ class NotesPage extends React.Component {
 
   state = {
     loading: true,
-    notes: []
+    notes: [],
+    expandedNote: null
   }
 
   componentDidMount() {
@@ -19,10 +20,15 @@ class NotesPage extends React.Component {
       .then(notes => this.setState({ notes }))
   }
 
+  toggleNoteExpansion = (id) => {
+    if(id === this.state.expandedNote) return this.setState({expandedNote: null})
+    return this.setState({expandedNote: id})
+  }
+
   render() {
-    const { notes } = this.state
+    const { notes, expandedNote } = this.state
     const noteList = [];
-    if (notes.length) notes.forEach(note => noteList.push(<Note key={note.id} name={note.title} info={note.content} expanded={note.expanded}/>))
+    if (notes.length) notes.forEach(note => noteList.push(<Note key={note.id} note={note} expandedNote={expandedNote} toggle={this.toggleNoteExpansion}/>))
     return (
       <div className='NotesPage'>
         <header className="banner" role="banner">
