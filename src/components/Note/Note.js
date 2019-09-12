@@ -12,7 +12,7 @@ const NotePage = (props) => {
       <button className='edit' onClick={()=> toggle(id)}>{expandedNote === id ? 'shrink' : 'expand'}</button>
       <p>{title}</p>
       <p hidden={expandedNote === id ? false : true}>{content}</p>
-      <button hidden={expandedNote === id ? false : true}>Delete</button>
+      <button hidden={expandedNote === id ? false : true} onClick={()=>props.handleDelete(id)}>Delete</button>
       <button hidden={expandedNote === id ? false : true}>Edit</button>
     </section>
   )

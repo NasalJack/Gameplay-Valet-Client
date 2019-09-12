@@ -29,17 +29,34 @@ const ValetApiService = {
       .then(res => (!res.ok) ? res.json().then(e=> Promise.reject(e)) : res.json())
   },
   getNotes(gameId) {
-    return fetch (`${this.url}/game/${gameId}/user/${TokenService.getUserToken()}`, {
+    return fetch(`${this.url}/game/${gameId}/user/${TokenService.getUserToken()}`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`
       }
     })
     .then(res => (!res.ok) ? res.json().then(e=> Promise.reject(e)) : res.json())
   },
-  addNote() {
-
+  addNote(note, gameId) {
+    return fetch(`${this.url}/game/${gameId}/user/${TokenService.getUserToken()}`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`
+      },
+      body: JSON.stringify(note)
+    })
+    .then(res => (!res.ok) ? res.json().then(e=> Promise.reject(e)) : res.json())
   },
-  deleteNote() {
+  deleteNote(id, gameId) {
+    return fetch(`${this.url}/game/${gameId}/user/${TokenService.getUserToken()}`, { 
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`
+      },
+      body: JSON.stringify({ id })
+    })
+    .then(res => (!res.ok) ? res.json().then(e=> Promise.reject(e)) : res)
 
   },
   updateNote() {
