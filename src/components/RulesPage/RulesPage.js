@@ -19,12 +19,13 @@ class RulesPage extends React.Component {
     return (
       <div className='RulesPage'>
         <header className="banner" role="banner">
-              <h1>Rules</h1>
-          </header>
+          <h1>{this.props.title}</h1>
+          <h2>Rules</h2>
+        </header>
 
-          <section>
-              {this.props.rules}
-          </section>
+        <section>
+          {this.props.rules}
+        </section>
       </div>
     )
   }

@@ -19,12 +19,13 @@ class TipsPage extends React.Component {
   return (
       <div className='TipsPage'>
         <header className="banner" role="banner">
-              <h1>Tips</h1>
-          </header>
+          <h1>{this.props.title}</h1>
+          <h2>Tips</h2>
+        </header>
 
-          <section>
-              {this.props.tips}
-          </section>
+        <section>
+          {this.props.tips}
+        </section>
       </div>
     )
   }

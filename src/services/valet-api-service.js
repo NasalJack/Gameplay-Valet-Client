@@ -60,7 +60,6 @@ const ValetApiService = {
 
   },
   updateNote(note, gameId) {
-    console.log(note)
     return fetch(`${this.url}/game/${gameId}/user/${TokenService.getUserToken()}`, { 
       method: 'PATCH',
       headers: {
@@ -71,11 +70,33 @@ const ValetApiService = {
     })
     .then(res => (!res.ok) ? res.json().then(e=> Promise.reject(e)) : res)
   },
-  addGameToList() {
-
+  checkGameListStatus(gameId) {
+    return fetch(`${this.url}/junction/user/${TokenService.getUserToken()}/game/${gameId}`, {
+      headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`
+      }
+    })
+    .then(res => (!res.ok) ? res.json().then(e=> Promise.reject(e)) : res.json())
   },
-  removeGameFromList() {
-
+  addGameToList(gameId) {
+    return fetch(`${this.url}/junction/user/${TokenService.getUserToken()}/game/${gameId}`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`
+      }
+    })
+    .then(res => (!res.ok) ? res.json().then(e=> Promise.reject(e)) : res.json())
+  },
+  removeGameFromList(gameId) {
+    return fetch(`${this.url}/junction/user/${TokenService.getUserToken()}/game/${gameId}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`
+      }
+    })
+    .then(res => (!res.ok) ? res.json().then(e=> Promise.reject(e)) : res.json())
   }
 
 

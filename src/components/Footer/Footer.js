@@ -15,7 +15,7 @@ class Footer extends React.Component {
         <Link to={route}>Main</Link>
         <Link to={route+'/rules'}>Rules</Link>
         <Link to={route+'/tips'}>Tips</Link>
-        <Link to={route+'/notes/'+TokenService.getUserToken()}>Notes</Link>
+        <Link hidden={TokenService.hasAuthToken() ? false : true}to={route+'/notes/'+TokenService.getUserToken()}>Notes</Link>
       </footer>
     )
   }

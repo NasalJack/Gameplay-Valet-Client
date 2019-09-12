@@ -8,22 +8,60 @@ import './GamePage.css'
 
 class GamePage extends React.Component {
 
+  state = {
+    error: null,
+    onUserList: false
+  }
+
   componentDidMount() {
+    ValetApiService.checkGameListStatus(this.props.match.params.id)
+      .then(status => {
+        return this.setState({onUserList: status.onList})
+      })
+      .catch(res => this.setState({ error: res.error}))
     if(this.props.id === Number(this.props.match.params.id)) return
     ValetApiService.getGame(this.props.match.params.id)
       .then(game => {
         return this.props.setCurrentGame(game)
       })
+      .catch(res => this.setState({ error: res.error }))
+  }
+
+  handleAddClicked = () => {
+    ValetApiService.addGameToList(this.props.match.params.id)
+      .then(() => {
+        this.setState({onUserList: true})
+      })
+      .catch(res => this.setState({ error: res.error }))
+  }
+
+  handleDeleteClicked = () => {
+    ValetApiService.removeGameFromList(this.props.match.params.id)
+      .then(() => {
+        this.setState({onUserList: false})
+      })
+      .catch(res => this.setState({ error: res.error }))
   }
 
   render() {
     const route = this.props.match.params.id;
     const { rating, genres, long_description, title } = this.props
 
+    const removeGameButton = <button onClick={this.handleDeleteClicked}>Remove from my games</button>
+    const addGameButton = <button onClick={this.handleAddClicked}>Add to my games</button>
+    const loggedInOptions = 
+      <div className='button-box'>
+      <Link to={route+'/notes/'+TokenService.getUserToken()}>
+        <button>Notes</button>
+      </Link>
+      {this.state.onUserList ? removeGameButton : addGameButton}
+    </div>
+
     return (
       <div className='GamePage'>
         <header className="banner" role="banner">
-          <h1>{!title ? 'loading...' : title}</h1>
+          <h1>{this.state.error ? 'Game note found' : (!title ? 'loading...' : title)}</h1>
+          <p>{this.state.error}</p>
           <div>rating: {rating}</div>
           <ul>{genres}</ul>
         </header>
@@ -40,12 +78,7 @@ class GamePage extends React.Component {
                 <button>Tips</button>
               </Link>
             </div>
-            <div className='button-box'>
-              <Link to={route+'/notes/'+TokenService.getUserToken()}>
-                <button>Notes</button>
-              </Link>
-              <button>Add/remove</button>
-            </div>
+            {TokenService.hasAuthToken() ? loggedInOptions : ''}
         </section>
       </div>
     )

@@ -27,7 +27,7 @@ class NotePage extends React.Component {
     }
     ValetApiService.updateNote(newNote, this.props.match.params.gameId)
       .then(() => {
-        this.setState({ note: newNote })
+        this.setState({ note: newNote, editing: false })
       })
       .catch(res => this.setState({ error: res.error }))
   }

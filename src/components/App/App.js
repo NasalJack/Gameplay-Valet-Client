@@ -52,7 +52,6 @@ class App extends React.Component {
   }
 
   onLoginSuccess = () => {
-    console.log('logging in')
     this.setState({loggedIn: true})
     this.setMyGames()
   }
@@ -87,15 +86,20 @@ class App extends React.Component {
           />}/>
           <Route exact path='/game/:id/rules' render={()=> <RulesPage
             setCurrentGame = {this.setCurrentGame}
+            title = {game.title}
             rules={game.rules}
             id={game.id}
           />} />
           <Route exact path='/game/:id/tips' render={()=> <TipsPage 
             setCurrentGame = {this.setCurrentGame}
+            title = {game.title}
             tips={game.tips}
             id={game.id}
           />}/>
-          <Route exact path='/game/:gameId/notes/:userId' component={NotesPage} />
+          <Route exact path='/game/:gameId/notes/:userId' render={()=> <NotesPage
+            setCurrentGame = {this.setCurrentGame}
+            title = {game.title}
+          /> } />
           <Route component={PageNotFound} />
         </Switch>
         <Route path='/' render={()=> <NavBar loggedIn={this.state.loggedIn} logout={this.onLogout}/>} />

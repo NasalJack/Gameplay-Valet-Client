@@ -19,6 +19,13 @@ class NotesPage extends React.Component {
   componentDidMount() {
     ValetApiService.getNotes(this.props.match.params.gameId)
       .then(notes => this.setState({ notes }))
+      .catch(res => this.setState({ error: res.error }))
+    if(this.props.id === Number(this.props.match.params.gameId)) return
+    ValetApiService.getGame(this.props.match.params.gameId)
+      .then(game => {
+        return this.props.setCurrentGame(game)
+      })
+      .catch(res => this.setState({ error: res.error }))
   }
 
   toggleNoteExpansion = (id) => {
@@ -82,7 +89,8 @@ class NotesPage extends React.Component {
     return (
       <div className='NotesPage'>
         <header className="banner" role="banner">
-              <h1>All Games</h1>
+              <h1>{this.props.title}</h1>
+              <h2>Notes</h2>
               <p>{this.state.error}</p>
           </header>
           
