@@ -29,7 +29,7 @@ class SignupPage extends React.Component {
       .then(user => {
         TokenService.saveUserId(user.id)
         TokenService.saveAuthToken(user.authToken)
-        this.props.history.push('/games/')
+        this.props.history.push('/')
       })
       .catch(res => this.setState({ error: res.error }))
   }
