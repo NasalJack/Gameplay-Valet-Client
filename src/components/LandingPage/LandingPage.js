@@ -1,8 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import TokenService from '../../services/token-service';
-
 import './LandingPage.css'
 
 class LandingPage extends React.Component {
@@ -10,7 +8,7 @@ class LandingPage extends React.Component {
     let bottomButtons
     if(this.props.loggedIn) {
       bottomButtons = 
-        <Link to={'/games/'+TokenService.getUserToken()}>
+        <Link to={'/mygames'}>
           <button>My Games</button>
         </Link>
     } else {

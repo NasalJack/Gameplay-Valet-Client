@@ -17,7 +17,7 @@ import SignupPage from '../SignupPage/SignupPage';
 import NotesPage from '../NotesPage/NotesPage';
 import MyGamesPage from '../MyGamesPage/MyGamesPage';
 import ValetApiService from '../../services/valet-api-service';
-import TokenService from '../../services/token-service'
+import TokenService from '../../services/token-service';
 
 
 
@@ -97,7 +97,7 @@ class App extends React.Component {
             filterList = {this.filterList}
             filterFor = {this.state.filterFor}
           />}/>
-          <Route exact path='/games/:userId' render={()=> <MyGamesPage list={this.state.myGamesList} setMyGames={this.setMyGames}/>}/>
+          <Route exact path='/mygames' render={()=> <MyGamesPage list={this.state.myGamesList} setMyGames={this.setMyGames}/>}/>
           <Route exact path='/game/:id' render={()=> <GamePage 
             setCurrentGame = {this.setCurrentGame}
             id = {game.id}
@@ -119,7 +119,7 @@ class App extends React.Component {
             tips={game.tips}
             id={game.id}
           />}/>
-          <Route exact path='/game/:gameId/notes/:userId' render={()=> <NotesPage
+          <Route exact path='/game/:gameId/notes' render={()=> <NotesPage
             setCurrentGame = {this.setCurrentGame}
             title = {game.title}
           /> } />

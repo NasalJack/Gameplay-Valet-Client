@@ -7,12 +7,17 @@ import './RulesPage.css';
 
 class RulesPage extends React.Component {
 
+  state = {
+    error: null
+  }
+
   componentDidMount() {
     if(this.props.id === Number(this.props.match.params.id)) return
     ValetApiService.getGame(this.props.match.params.id)
       .then(game => {
         return this.props.setCurrentGame(game)
       })
+      .catch(res => this.setState({ error: res.error }))
   }
 
   render() {
@@ -21,6 +26,7 @@ class RulesPage extends React.Component {
         <header className="banner" role="banner">
           <h1>{this.props.title}</h1>
           <h2>Rules</h2>
+          <p>{this.state.error}</p>
         </header>
 
         <section>

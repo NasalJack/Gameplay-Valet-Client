@@ -11,6 +11,10 @@ class SignupPage extends React.Component {
   state = {
     error: null
   }
+
+  componentDidMount() {
+    if (TokenService.hasAuthToken()) this.props.history.push('/')
+  }
   
   handleSubmit = (event) => {
     event.preventDefault()

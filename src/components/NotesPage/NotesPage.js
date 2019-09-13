@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import Note from '../Note/Note';
 import ValetApiService from '../../services/valet-api-service';
+import TokenService from '../../services/token-service';
 
 import './NotesPage.css';
 
@@ -17,6 +18,7 @@ class NotesPage extends React.Component {
   }
 
   componentDidMount() {
+    if (!TokenService.hasAuthToken()) return this.props.history.push('/login')
     ValetApiService.getNotes(this.props.match.params.gameId)
       .then(notes => this.setState({ notes }))
       .catch(res => this.setState({ error: res.error }))

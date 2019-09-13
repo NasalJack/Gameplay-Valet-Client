@@ -53,7 +53,7 @@ class GamePage extends React.Component {
     const addGameButton = <button onClick={this.handleAddClicked}>Add to my games</button>
     const loggedInOptions = 
       <div className='button-box'>
-      <Link to={route+'/notes/'+TokenService.getUserToken()}>
+      <Link to={route+'/notes'}>
         <button>Notes</button>
       </Link>
       {this.state.onUserList ? removeGameButton : addGameButton}

@@ -12,6 +12,10 @@ class LoginPage extends React.Component {
     error: null
   }
 
+  componentDidMount() {
+    if (TokenService.hasAuthToken()) this.props.history.push('/')
+  }
+
   handleSubmitAuth = event => {
     event.preventDefault();
     this.setState({ error: null })
