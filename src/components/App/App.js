@@ -106,7 +106,7 @@ class App extends React.Component {
           /> } />
           <Route component={PageNotFound} />
         </Switch>
-        <Route path='/' render={()=> <NavBar loggedIn={this.state.loggedIn} logout={this.onLogout}/>} />
+        <Route path='/' render={()=> <NavBar logout={this.onLogout}/>} />
         <Route path='/game/:id' component={Footer} />
       </main>
     );

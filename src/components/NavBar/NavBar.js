@@ -8,17 +8,19 @@ import './NavBar.css'
 const NavBar = (props) => {
   
   let loginout
-  if (props.loggedIn) {
+  const loggedIn = TokenService.hasAuthToken()
+
+  if (loggedIn) {
     loginout = <button onClick={() => props.logout()}>Logout</button>
   }
-  if (!props.loggedIn) {
+  if (!loggedIn) {
     loginout = <Link to='/login'>Login</Link>
   }
   return (
     <nav className='NavBar' role="navigation">
       <Link to='/'>Main{props.loggedIn}</Link>
       <Link to='/games'>All Games</Link>
-      <Link hidden={props.loggedIn ? false : true}to={'/games/'+TokenService.getUserToken}>My Games</Link>
+      <Link hidden={loggedIn ? false : true}to={'/games/'+TokenService.getUserToken}>My Games</Link>
       {loginout}
     </nav>
   )
