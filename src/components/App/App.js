@@ -33,7 +33,8 @@ class App extends React.Component {
       genres: null,
       long_description: null,
       title: null
-    }
+    },
+    filterFor: ''
   }
 
   componentDidMount() {
@@ -69,6 +70,19 @@ class App extends React.Component {
       })
   }
 
+  sortList = (event) => {
+    let sortedList
+    const sortBy = event.target.value;
+    if (sortBy === 'rating') sortedList = [...this.state.gamesList].sort((a, b) => (a[sortBy] > b[sortBy]) ? -1 : 1)
+    else sortedList = [...this.state.gamesList].sort((a, b) => (a[sortBy] > b[sortBy]) ? 1 : -1)
+    this.setState({ gamesList: sortedList })
+  }
+
+  filterList = (event) => {
+    this.setState({ filterFor: event.target.value})
+  }
+
+
   render() {
     const game = this.state.currentGame;
     return (
@@ -77,7 +91,12 @@ class App extends React.Component {
           <Route exact path='/' render={()=> <LandingPage loggedIn={this.state.loggedIn}/> } />
           <Route exact path='/login' render={()=> <LoginPage onLoginSuccess={this.onLoginSuccess} /> } />
           <Route exact path='/signup' component={SignupPage} />
-          <Route exact path='/games' render={()=> <GamesListPage list={this.state.gamesList} />}/>
+          <Route exact path='/games' render={()=> <GamesListPage
+            list={this.state.gamesList}
+            sortList = {this.sortList}
+            filterList = {this.filterList}
+            filterFor = {this.state.filterFor}
+          />}/>
           <Route exact path='/games/:userId' render={()=> <MyGamesPage list={this.state.myGamesList} setMyGames={this.setMyGames}/>}/>
           <Route exact path='/game/:id' render={()=> <GamePage 
             setCurrentGame = {this.setCurrentGame}

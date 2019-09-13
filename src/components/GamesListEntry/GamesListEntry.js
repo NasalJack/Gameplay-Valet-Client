@@ -5,13 +5,18 @@ class GamesListEntry extends React.Component {
   
   
   render() {
+    const { genres, short_description, rating, title, id, userPage } = this.props
+    const genreArray = genres.split(",")
+    const genreList = []
+    if (genres) genreArray.forEach((genre, i) => genreList.push(<li key={i}>{genre}</li>))
     return (
       <section className='GamesListEntry'>
-        <Link to={'/game/'+this.props.id}>
-          <h2>{this.props.title}</h2>
+        <Link to={'/game/'+id}>
+          <h2>{title}</h2>
         </Link>
-        <div hidden={this.props.userPage} className="short_description">{this.props.short_description}</div>
-        <div hidden={this.props.userPage} className='rating'>Rating: {this.props.rating}</div>
+        <ul>{genreList}</ul>
+        <div hidden={userPage} className="short_description">{short_description}</div>
+        <div hidden={userPage} className='rating'>Rating: {rating}</div>
       </section>
     )
   }

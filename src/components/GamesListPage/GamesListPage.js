@@ -4,13 +4,16 @@ import GamesListEntry from '../GamesListEntry/GamesListEntry'
 
 import './GamesListPage.css';
 class GamesListPage extends React.Component {
-
   render() {
+    const { list, filterFor } = this.props;
+    const filteredGames = list.filter(game => 
+      (game.title.includes(filterFor) || game.genres.includes(filterFor))
+    )
     const gamesList = [];
-    this.props.list.forEach(game => {
-      const {id, title, short_description, rating} = game
+    filteredGames.forEach(game => {
+      const {id, title, short_description, rating, genres} = game
       gamesList.push(
-          <GamesListEntry key={id} id={id} title={title} short_description={short_description} rating={rating} />
+          <GamesListEntry key={id} id={id} title={title} short_description={short_description} rating={rating} genres={genres}/>
       )
     });
 
@@ -22,14 +25,15 @@ class GamesListPage extends React.Component {
         <section>
           <label>
             Search
-            <input type="text" />
+            <input name='filter' onChange={(event)=>this.props.filterList(event)}type="text" />
           </label>
           <br />
           <label>
             Sort
-            <select>
-                <option value="option-1">Option 1</option>
-                <option value="option-2">Option 2</option>
+            <select name='sort' onChange={(event) => this.props.sortList(event)}>
+                <option value="id">Unsorted</option>
+                <option value="title">Alphabetical</option>
+                <option value="rating">Rating</option>
               </select>
           </label>
         </section>
