@@ -13,14 +13,14 @@ class LandingPage extends React.Component {
         </Link>
     } else {
       bottomButtons = 
-        <div className='button-box'>
+        <>
           <Link to='/login'>
             <button>Login</button>
           </Link>
           <Link to='/signup'>
             <button>Signup</button>
           </Link>
-        </div>
+        </>
     }
     return (
       <div className='LandingPage' >
@@ -28,8 +28,12 @@ class LandingPage extends React.Component {
           <h1>Gameplay Valet</h1>
         </header>
 
-        <section>
-          Brief summary about the app
+        <section className='description'>
+          <div>
+          Welcome to Gameplay Valet, your one stop resource for all your board gaming reference needs.
+          To get started you can go directly to the Games page where you can get rules and tips for every game, or
+          create an account to manage a list of your personal games and to have the ability to make notes on each game.
+          </div>
         </section>
 
         <section className='landing-buttons'>

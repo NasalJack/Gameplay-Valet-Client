@@ -5,7 +5,19 @@
   right: 0;
   z-index: 10;
   padding: 1% 0;
-  background-color: #aaa;
+  background-color: #87ADDE;
   display: flex;
   justify-content: space-between;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 18px;
+}
+
+.NavBar a {
+  color: black;
+  text-decoration: none;
+}
+
+.NavBar button {
+  padding: 0;
 }

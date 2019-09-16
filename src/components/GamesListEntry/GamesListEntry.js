@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './GamesListEntry.css'
+import meeple from '../../BlackMeeple.png'
+
+
 class GamesListEntry extends React.Component {
   
   
@@ -11,7 +15,8 @@ class GamesListEntry extends React.Component {
     if (genres) genreArray.forEach((genre, i) => genreList.push(<li key={i}>{genre}</li>))
     return (
       <section className='GamesListEntry'>
-        <Link to={'/game/'+id}>
+        <Link className='game-name' to={'/game/'+id}>
+          <img src={meeple} alt='meeple' height='20px'/>
           <h2>{title}</h2>
         </Link>
         <ul>{genreList}</ul>

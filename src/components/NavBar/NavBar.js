@@ -19,7 +19,7 @@ const NavBar = (props) => {
   return (
     <nav className='NavBar' role="navigation">
       <Link to='/'>Main{props.loggedIn}</Link>
-      <Link to='/games'>All Games</Link>
+      <Link to='/games'>Games</Link>
       <Link hidden={loggedIn ? false : true}to={'/mygames'}>My Games</Link>
       {loginout}
     </nav>

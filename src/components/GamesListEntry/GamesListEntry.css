@@ -1,0 +1,31 @@
+.GamesListEntry {
+  background-color: rgba(0, 0, 0, 10%);
+  margin: 0px 20px 20px 20px;
+  padding: 10px;
+}
+
+.GamesListEntry ul {
+  list-style: none;
+  padding-left: 0px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 0 0;
+}
+
+.GamesListEntry h2 {
+  margin: 0 0 0 10px;
+}
+
+.GamesListEntry .game-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.GamesListEntry img:hover {
+  transform: scale(1.1);
+}
+
+.GamesListEntry h2:hover {
+  transform: scale(1.1);
+}
