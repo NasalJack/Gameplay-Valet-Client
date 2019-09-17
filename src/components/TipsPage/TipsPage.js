@@ -23,7 +23,7 @@ class TipsPage extends React.Component {
   render() {
   return (
       <div className='TipsPage'>
-        <header className="banner" role="banner">
+        <header className="banner">
           <h1>{this.props.title}</h1>
           <h2>Tips</h2>
           <p>{this.state.error}</p>
@@ -32,6 +32,7 @@ class TipsPage extends React.Component {
         <section>
           {this.props.tips}
         </section>
+        <button onClick={this.props.history.goBack}>Main Page</button>
       </div>
     )
   }

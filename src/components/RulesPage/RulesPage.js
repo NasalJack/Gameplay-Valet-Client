@@ -23,7 +23,7 @@ class RulesPage extends React.Component {
   render() {
     return (
       <div className='RulesPage'>
-        <header className="banner" role="banner">
+        <header className="banner">
           <h1>{this.props.title}</h1>
           <h2>Rules</h2>
           <p>{this.state.error}</p>
@@ -32,6 +32,8 @@ class RulesPage extends React.Component {
         <section>
           {this.props.rules}
         </section>
+
+        <button onClick={this.props.history.goBack}>Main Page</button>
       </div>
     )
   }

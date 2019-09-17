@@ -60,7 +60,7 @@ class GamePage extends React.Component {
 
     return (
       <div className='GamePage'>
-        <header className="banner" role="banner">
+        <header className="banner">
           <h1>{this.state.error ? 'Game note found' : (!title ? 'loading...' : title)}</h1>
         </header>
 

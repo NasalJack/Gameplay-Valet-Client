@@ -40,7 +40,7 @@ class LoginPage extends React.Component {
   render() {
     return (
       <div className='LoginPage'>
-        <header className="banner" role="banner">
+        <header className="banner">
           <h1>Login</h1>
         </header>
 
@@ -48,20 +48,25 @@ class LoginPage extends React.Component {
 
         <section>
           <form onSubmit={(event) =>this.handleSubmitAuth(event)}>
-              <label>
-                Username
-                <input name="user_name" required type="text" />
-              </label>
-              <label className="password">
-                  Password
-                  <input name="password" required type="text" />
-              </label>
-              <br />
-              <button type="submit">Submit</button>
+            <div className='input-fields-background'>
+              <div className='input-fields'>
+                  <label>
+                    Username:
+                    <input name="user_name" required type="text" />
+                  </label>
+                  <label className="password">
+                      Password:
+                      <input type="password" name="password" required />
+                  </label>
+                </div>
+              </div>
+              <div className='button-box'>
+                <button type="submit">Submit</button>
+                <Link to='/signup'>
+                  <button type='button' className="alternative">Signup instead</button>
+                </Link>
+              </div>
           </form>
-          <Link to='/signup'>
-            <button className="alternative">Signup instead</button>
-          </Link>
         </section>
       </div>
     )

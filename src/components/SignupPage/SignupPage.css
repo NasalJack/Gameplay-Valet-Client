@@ -1,35 +1,49 @@
 .SignupPage header {
-  padding: 12% 0;
+  margin: 45px 5px 0 5px;
+  padding-bottom: 0px;
+  font-size: 16px;
+  background-image: url(../../board-background2.jpg);
+  border-radius: 15px;
 }
 
-.SignupPage section {
-  min-height: 200px;
-  padding: 6% 0;
-  background-color: #bbb;
+.SignupPage h1 {
+  border-radius: 15px;
+  background-color: rgba(7, 135, 135, .9);
+  border: 1px solid black;
 }
 
-.SignupPage section:nth-child(even) {
-  background-color: #ddd;
+.SignupPage .input-fields-background {
+  background-image: url(../../board-background2.jpg);
+  border-radius: 15px;
+  margin: 0 5px;
+}
+
+.SignupPage .input-fields {
+  border-radius: 15px;
+  border: 1px solid black;
+  padding: 20px;
+  background-color: rgb(136, 7, 7, .9);
+  color: white;
 }
 
 .SignupPage button {
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 15px;
-  font-size: 20px;
+    margin-top: 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15%;
+    font-size: 16px;
+    height: 60px;
+    width: 60px;
+    padding: 0;
+    font-weight: bold;
 }
 
-.SignupPage .banner {
-  height: 100px;
-  font-size: 12px;
+.SignupPage input {
+  margin-left: 5px;
 }
 
-.SignupPage .password input {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.SignupPage .alternative {
-  margin-top: 30px;
+.SignupPage .button-box {
+  display: flex;
+  justify-content: space-around;
 }
 

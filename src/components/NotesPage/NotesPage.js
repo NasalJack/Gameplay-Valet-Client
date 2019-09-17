@@ -84,13 +84,13 @@ class NotesPage extends React.Component {
         content:
         <textarea name='content' required></textarea>
       </label>
-      <button type='submit'>Add Note</button>
+      <button type='submit'>Submit</button>
       <button type='button' onClick={this.toggleNoteAdder}>Cancel</button>
     </form>
 
     return (
       <div className='NotesPage'>
-        <header className="banner" role="banner">
+        <header className="banner">
               <h1>{this.props.title}</h1>
               <h2>Notes</h2>
               <p>{this.state.error}</p>
@@ -101,6 +101,7 @@ class NotesPage extends React.Component {
           <section>
               {!this.state.addingNote ? <button onClick={this.toggleNoteAdder}>Add Note</button> : noteAdderForm}
           </section>
+          <button onClick={this.props.history.goBack}>Main Page</button>
       </div>
     )
   }

@@ -19,7 +19,7 @@ class GamesListPage extends React.Component {
 
     return (
       <div className='GamesListPage'>
-        <header className="banner" role="banner">
+        <header className="banner">
             <h1>All Games</h1>
         </header>
         <section className='user-inputs'>

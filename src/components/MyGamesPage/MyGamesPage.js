@@ -20,7 +20,7 @@ class MyGamesPage extends React.Component {
 
     return (
       <div className='MyGamesPage'>
-        <header className="banner" role="banner">
+        <header className="banner">
             <h1>My Games</h1>
         </header>
         {gamesList}

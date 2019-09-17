@@ -1,35 +1,49 @@
 .LoginPage header {
-  padding: 12% 0;
+  margin: 45px 5px 0 5px;
+  padding-bottom: 0px;
+  font-size: 16px;
+  background-image: url(../../board-background2.jpg);
+  border-radius: 15px;
 }
 
-.LoginPage section {
-  min-height: 200px;
-  padding: 6% 0;
-  background-color: #bbb;
+.LoginPage h1 {
+  border-radius: 15px;
+  background-color: rgba(7, 135, 135, .8);
+  border: 1px solid black;
 }
 
-.LoginPage section:nth-child(even) {
-  background-color: #ddd;
+.LoginPage .input-fields-background {
+  background-image: url(../../board-background2.jpg);
+  border-radius: 15px;
+  margin: 0 5px;
+}
+
+.LoginPage .input-fields {
+  border-radius: 15px;
+  border: 1px solid black;
+  padding: 20px;
+  background-color: rgb(136, 7, 7, .8);
+  color: white;
 }
 
 .LoginPage button {
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 15px;
-  font-size: 20px;
+    margin-top: 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15%;
+    font-size: 16px;
+    height: 60px;
+    width: 60px;
+    padding: 0;
+    font-weight: bold;
 }
 
-.LoginPage .banner {
-  height: 100px;
-  font-size: 12px;
+.LoginPage input {
+  margin-left: 5px;
 }
 
-.LoginPage .password input {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.LoginPage .alternative {
-  margin-top: 30px;
+.LoginPage .button-box {
+  display: flex;
+  justify-content: space-around;
 }
 

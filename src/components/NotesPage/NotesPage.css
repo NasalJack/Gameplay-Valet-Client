@@ -1,0 +1,18 @@
+.NotesPage header {
+  margin-top: 45px;
+  font-size: 16px;
+}
+
+.NotesPage h1 {
+  margin: 45px 5px 0 5px;
+  border-radius: 15px;
+  padding-bottom: 0px;
+  background-color: rgba(255, 255, 255, .8);
+}
+
+.NotesPage h2 {
+  background-color: yellow;
+  margin: 20px 75px;
+  border-radius: 10px;
+  font-weight: bold;
+}

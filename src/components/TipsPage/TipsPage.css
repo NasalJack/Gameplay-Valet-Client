@@ -1,18 +1,40 @@
 .TipsPage header {
-  padding: 12% 0;
+  margin-top: 45px;
+  font-size: 16px;
+}
+
+.TipsPage h1 {
+  margin: 45px 5px 0 5px;
+  border-radius: 15px;
+  padding-bottom: 0px;
+  background-color: rgba(255, 255, 255, .8);
+}
+
+.TipsPage h2 {
+  background-color: lightblue;
+  margin: 20px 75px;
+  border-radius: 10px;
+  font-weight: bold;
 }
 
 .TipsPage section {
   min-height: 200px;
-  padding: 6% 0;
-  background-color: #bbb;
+  padding: 5px;
+  background-color: rgb(255, 255, 255);
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid grey;
 }
 
-.TipsPage section:nth-child(even) {
-  background-color: #ddd;
+.TipsPage button {
+  margin-top: 20px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 15%;
+  font-size: 16px;
+  height: 60px;
+  width: 60px;
+  padding: 0;
+  font-weight: bold;
 }
 
-.TipsPage .banner {
-  height: 100px;
-  font-size: 12px;
-}

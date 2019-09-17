@@ -37,28 +37,34 @@ class SignupPage extends React.Component {
   render() {
     return (
       <div className='SignupPage'>
-        <header className="banner" role="banner">
-              <h1>Sign-up</h1>
-              <p>{this.state.error}</p>
-          </header>
+        <header className="banner">
+          <h1>Signup</h1>
+        </header>
 
-          <section>
-            <form onSubmit={(event) => this.handleSubmit(event)}>
-                <label>
-                  Username
-                  <input name='user_name' required type="text" />
-                </label>
-                <label className="password">
-                    Password
-                    <input name='password' required type="text" />
-                </label>
-                <br />
-                <button type="submit">Submit</button>
-            </form>
-            <Link to='/login'>
-              <button className="alternative">Login instead</button>
-            </Link>
-          </section>
+        <div className="error">{this.state.error}</div>
+
+        <section>
+          <form onSubmit={(event) =>this.handleSubmitAuth(event)}>
+            <div className='input-fields-background'>
+              <div className='input-fields'>
+                  <label>
+                    Username:
+                    <input name="user_name" required type="text" />
+                  </label>
+                  <label className="password">
+                      Password:
+                      <input type="password" name="password" required />
+                  </label>
+              </div>
+            </div>
+            <div className='button-box'>
+              <button type="submit">Submit</button>
+              <Link to='/login'>
+                <button type='button' className="alternative">Login instead</button>
+              </Link>
+            </div>
+          </form>
+        </section>
       </div>
     )
   }
