@@ -1,12 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+import TokenService from '../../services/token-service';
+
 import './LandingPage.css'
 
 class LandingPage extends React.Component {
   render() {
     let bottomButtons
-    if(this.props.loggedIn) {
+    if(TokenService.hasAuthToken()) {
       bottomButtons = 
         <Link to={'/mygames'}>
           <button>My Games</button>
@@ -24,15 +26,17 @@ class LandingPage extends React.Component {
     }
     return (
       <div className='LandingPage' >
-        <header role="banner">
-          <h1>Gameplay Valet</h1>
+        <header className='h1-background'>
+          <div className='h1-background'>
+            <h1>Gameplay Valet</h1>
+          </div>
         </header>
 
-        <section className='description'>
-          <div>
-          Welcome to Gameplay Valet, your one stop resource for all your board gaming reference needs.
-          To get started you can go directly to the Games page where you can get rules and tips for every game, or
-          create an account to manage a list of your personal games and to have the ability to make notes on each game.
+        <section className='description-background'>
+          <div className='description'>
+            Welcome to Gameplay Valet, your one stop resource for all your board gaming reference needs.
+            To get started you can go directly to the Games page where you can get rules and tips for every game, or
+            create an account to manage a list of your personal games and write notes for each game.
           </div>
         </section>
 

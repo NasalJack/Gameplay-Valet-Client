@@ -22,14 +22,14 @@ class GamesListPage extends React.Component {
         <header className="banner" role="banner">
             <h1>All Games</h1>
         </header>
-        <section>
+        <section className='user-inputs'>
           <label>
-            Search
+            Search: 
             <input name='filter' onChange={(event)=>this.props.filterList(event)}type="text" />
           </label>
           <br />
           <label>
-            Sort
+            Sort: 
             <select name='sort' onChange={(event) => this.props.sortList(event)}>
                 <option value="id">Unsorted</option>
                 <option value="title">Alphabetical</option>

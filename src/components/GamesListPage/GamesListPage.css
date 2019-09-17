@@ -1,0 +1,39 @@
+.GamesListPage .GamesListEntry:nth-child(5n) {
+  background-color: white;
+}
+.GamesListPage .GamesListEntry:nth-child(5n+1) {
+  background-color: lightblue;
+}
+.GamesListPage .GamesListEntry:nth-child(5n+2) {
+  background-color: red;
+}
+.GamesListPage .GamesListEntry:nth-child(5n+3) {
+  background-color: lightgreen;
+}
+.GamesListPage .GamesListEntry:nth-child(5n+4) {
+  background-color: yellow;
+}
+
+.GamesListPage header {
+  margin: 45px 45px 0 45px;
+  border-radius: 15px;
+  padding-bottom: 0px;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, .8);
+}
+
+.GamesListPage h1 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.GamesListPage .user-inputs {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.GamesListPage input, select {
+  background-color: rgba(255, 255, 255, .7);
+  margin-left: 5px;
+  margin-bottom: 5px;
+}

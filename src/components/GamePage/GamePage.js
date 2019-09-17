@@ -49,29 +49,37 @@ class GamePage extends React.Component {
     const route = this.props.match.params.id;
     const { rating, genres, long_description, title } = this.props
 
-    const removeGameButton = <button onClick={this.handleDeleteClicked}>Remove from my games</button>
-    const addGameButton = <button onClick={this.handleAddClicked}>Add to my games</button>
-    const loggedInOptions = 
-      <div className='button-box'>
-      <Link to={route+'/notes'}>
-        <button>Notes</button>
-      </Link>
-      {this.state.onUserList ? removeGameButton : addGameButton}
-    </div>
+    const removeGameButton = <button className='add-remove-button' onClick={this.handleDeleteClicked}>Remove from my games</button>
+    const addGameButton = <button className='add-remove-button' onClick={this.handleAddClicked}>Add to my games</button>
+
+    const genreList = []
+    if (genres) {
+      const genreArray = genres.split(",");
+      genreArray.forEach((genre, i) => genreList.push(<li key={i}>{genre}</li>))
+    }
 
     return (
       <div className='GamePage'>
         <header className="banner" role="banner">
           <h1>{this.state.error ? 'Game note found' : (!title ? 'loading...' : title)}</h1>
-          <p>{this.state.error}</p>
-          <div>rating: {rating}</div>
-          <ul>{genres}</ul>
         </header>
 
-        <section>{long_description}</section>
+        <p className='error'>{this.state.error}</p>
+
+        <section className='rating-genres-background'>
+          <div className='rating-genres'>
+            <div>rating: {rating}</div>
+            <ul>{genreList}</ul>
+          </div>
+        </section>
+
+        <section className='description-background'>
+          <div className='description'>
+            {long_description}
+          </div>
+        </section>
 
         <section>
-            {/* <button>Quick Rules</button> */}
             <div className='button-box'>
               <Link to={route+'/rules'}>
                 <button>Rules</button>
@@ -79,8 +87,13 @@ class GamePage extends React.Component {
               <Link to={route+'/tips'}>
                 <button>Tips</button>
               </Link>
+              <Link hidden={TokenService.hasAuthToken() ? false : true}to={route+'/notes'}>
+                <button>Notes</button>
+              </Link>
             </div>
-            {TokenService.hasAuthToken() ? loggedInOptions : ''}
+            <div hidden={TokenService.hasAuthToken() ? false : true}>
+              {this.state.onUserList ? removeGameButton : addGameButton}
+            </div>
         </section>
       </div>
     )

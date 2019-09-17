@@ -11,6 +11,10 @@ body {
   background-image: url(../../table-background.jpg);
 }
 
+button:hover, a:hover {
+  transform: scale(1.2);
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

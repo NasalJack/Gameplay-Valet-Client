@@ -3,30 +3,37 @@
   margin: 50px 10px 0px 10px;
 }
 
+.LandingPage .h1-background {
+  border-radius: 10px;
+  background-image: url(../../board-background2.jpg);
+}
+
 .LandingPage h1 {
   color: black;
-  background-color: #078787;
-  
+  background-color: rgba(7, 135, 135, .9);
   border-radius: 10px;
   border: solid black 2px;
 }
 
-.LandingPage section {
-  min-height: 200px;
-  padding: 6% 0;
-}
-
-.LandingPage .description {
-  background-color: rgb(136, 7, 7);
-  color: white;
+.LandingPage .description-background {
   border-radius: 15px;
   margin-right: 5px;
   margin-left: 5px;
+  padding: 0px;
+  background-image: url(../../board-background2.jpg);
+  /* background-size: cover; */
+}
+
+.LandingPage .description {
+  background-color: rgb(136, 7, 7, .9);
+  color: white;
+  border-radius: 15px;
   padding: 3px;
   border: solid 2px black;
 }
 
 .LandingPage button {
+  margin-top: 20px;
   background-color: white;
   border: 1px solid black;
   border-radius: 15%;
@@ -34,6 +41,7 @@
   height: 60px;
   width: 60px;
   padding: 0;
+  font-weight: bold;
 }
 
 button:hover {

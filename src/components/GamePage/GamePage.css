@@ -1,15 +1,41 @@
 .GamePage header {
-  padding: 12% 0;
+  margin-top: 45px;
+  font-size: 16px;
 }
 
-.GamePage section {
-  min-height: 200px;
-  padding: 6% 0;
-  background-color: #bbb;
+.GamePage h1 {
+  font-weight: bold;
 }
 
-.GamePage section:nth-child(even) {
-  background-color: #ddd;
+.GamePage ul {
+  padding-left: 0px;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+.GamePage .rating-genres, .description {
+  border-radius: 5px;
+  border: solid black 2px;
+  padding: 5px;
+}
+
+.GamePage .description-background, .rating-genres-background {
+  background-image: url(../../board-background2.jpg);
+  margin: 0 5px;
+  border-radius: 5px;
+}
+
+.GamePage .rating-genres {
+  color: white;
+  background-color: rgb(136, 7, 7, .8);
+}
+
+.GamePage .description {
+  background-color: rgb(8, 166, 166, .9);
+  margin-top: 10px;
 }
 
 .GamePage button {
@@ -21,9 +47,25 @@
 
 .GamePage .button-box {
   margin-top: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
 }
 
-.GamePage .banner {
-  height: 100px;
-  font-size: 12px;
+.GamePage button {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 15%;
+  font-size: 16px;
+  height: 60px;
+  width: 60px;
+  padding: 0;
+  font-weight: bold;
+}
+
+.GamePage .add-remove-button {
+  width: 200px;
+  border-radius: 5px;
+  color: white;
+  background-color: black;
 }
