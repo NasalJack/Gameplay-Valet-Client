@@ -101,7 +101,7 @@ class NotesPage extends React.Component {
           <section>
               {!this.state.addingNote ? <button onClick={this.toggleNoteAdder}>Add Note</button> : noteAdderForm}
           </section>
-          <button onClick={this.props.history.goBack}>Main Page</button>
+          <button className='main-page' onClick={this.props.history.goBack}>Main Page</button>
       </div>
     )
   }

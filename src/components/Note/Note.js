@@ -59,9 +59,11 @@ class NotePage extends React.Component {
 
 
     return (
-      <section className="Note">  
-        <button className='edit' onClick={()=> toggle(id)}>{expandedNote === id ? 'shrink' : 'expand'}</button>
-        <p>{title}</p>
+      <section className="Note">
+        <div className='container'>
+          <button className='expand' onClick={()=> toggle(id)}>{expandedNote === id ? '-' : '+'}</button>
+          <p className='title'>{title}</p>
+        </div>
         <p>{this.state.error}</p>
         <p hidden={expandedNote === id ? false : true}>{content}</p>
         {this.state.editing ? editForm : buttons}

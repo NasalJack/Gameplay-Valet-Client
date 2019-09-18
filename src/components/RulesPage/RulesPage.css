@@ -17,16 +17,23 @@
   font-weight: bold;
 }
 
-.RulesPage section {
+/* .RulesPage section {
   min-height: 200px;
   padding: 5px;
   background-color: rgb(255, 255, 255);
   margin: 5px;
   border-radius: 5px;
   border: 1px solid grey;
+} */
+
+.RulesPage canvas {
+  /* width: 100% !important; */
+  /* height: auto !important; */
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.RulesPage button {
+.RulesPage .main-page {
   margin-top: 20px;
   background-color: white;
   border: 1px solid black;
@@ -36,5 +43,6 @@
   width: 60px;
   padding: 0;
   font-weight: bold;
+  margin-bottom: 40px;
 }
 
