@@ -17,20 +17,37 @@
   font-weight: bold;
 }
 
-/* .RulesPage section {
-  min-height: 200px;
-  padding: 5px;
-  background-color: rgb(255, 255, 255);
-  margin: 5px;
-  border-radius: 5px;
-  border: 1px solid grey;
-} */
-
-.RulesPage canvas {
-  /* width: 100% !important; */
-  /* height: auto !important; */
+/* .RulesPage canvas {
   margin-right: auto;
   margin-left: auto;
+} */
+
+.RulesPage iframe {
+  display: block;
+  width: 95vw;
+  height: 50vh;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.RulesPage a {
+  text-decoration: none;
+  color: black;
+}
+
+.RulesPage .pdf-link {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(7, 135, 135, .8);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 90%;
+  margin-top: 5px;
+}
+
+.RulesPage .pdf-ling:hover {
+  transform: none;
 }
 
 .RulesPage .main-page {
