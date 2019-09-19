@@ -37,3 +37,19 @@
   margin-left: 5px;
   margin-bottom: 5px;
 }
+
+@media screen and (min-width: 505px) {
+  .GamesListPage header {
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .GamesListPage .user-inputs {
+    width: 50%;
+    margin: 10px auto 10px auto;
+  }
+}
+
+@media screen and (min-width: 808px) {
+  
+}

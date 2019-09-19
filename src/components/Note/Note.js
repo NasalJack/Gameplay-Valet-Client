@@ -40,15 +40,19 @@ class NotePage extends React.Component {
     const editForm = 
       <form onSubmit={(event) => this.handleEditSubmit(event)}hidden={expandedNote === id ? false : true} className='edit_form'>
         <label>
-          New Title:
+          New Title: <br />
           <input type='text' name='newTitle' defaultValue={title} required></input> 
         </label>
+        <br />
         <label>
-          New Content:
+          New Content: <br />
           <textarea name='newContent' defaultValue={content} required></textarea>
         </label>
-        <button type='submit'>Submit</button>
-        <button type='button' onClick={this.handleEditToggle}>Cancel</button>
+        <br />
+        <div className='edit-buttons'>
+          <button type='submit'>Submit</button>
+          <button type='button' onClick={this.handleEditToggle}>Cancel</button>
+        </div>
       </form>
 
     const buttons = 

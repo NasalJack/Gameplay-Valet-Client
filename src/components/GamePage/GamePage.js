@@ -79,16 +79,16 @@ class GamePage extends React.Component {
           </div>
         </section>
 
-        <section>
+        <section className='buttons'>
             <div className='button-box'>
               <Link to={route+'/rules'}>
-                <button>Rules</button>
+                <button className='die'>Rules</button>
               </Link>
               <Link to={route+'/tips'}>
-                <button>Tips</button>
+                <button className='die'>Tips</button>
               </Link>
               <Link hidden={TokenService.hasAuthToken() ? false : true}to={route+'/notes'}>
-                <button>Notes</button>
+                <button className='die'>Notes</button>
               </Link>
             </div>
             <div hidden={TokenService.hasAuthToken() ? false : true}>

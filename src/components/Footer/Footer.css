@@ -22,4 +22,14 @@
   border: none;
 }
 
+@media screen and (min-width: 505px) {
+  .Footer {
+    padding: 5px 5vw 30px 5vw;
+  }
+}
 
+@media screen and (min-width: 808px) {
+  .Footer {
+    padding-bottom: 30px;
+  }
+}

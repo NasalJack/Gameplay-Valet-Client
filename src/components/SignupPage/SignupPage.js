@@ -44,7 +44,7 @@ class SignupPage extends React.Component {
         <div className="error">{this.state.error}</div>
 
         <section>
-          <form onSubmit={(event) =>this.handleSubmitAuth(event)}>
+          <form onSubmit={(event)=>this.handleSubmit(event)}>
             <div className='input-fields-background'>
               <div className='input-fields'>
                   <label>

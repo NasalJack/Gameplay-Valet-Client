@@ -60,7 +60,7 @@ class RulesPage extends React.Component {
           <a target='_blank' rel='noopener noreferrer' href={this.props.rules}>View PDF in new page</a>
         </button>
 
-        <button className='main-page' onClick={this.props.history.goBack}>Main Page</button>
+        <button className='main-page die' onClick={this.props.history.goBack}>Main Page</button>
       </div>
     )
   }

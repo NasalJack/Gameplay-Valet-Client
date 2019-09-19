@@ -12,7 +12,8 @@
 
 .TipsPage h2 {
   background-color: lightblue;
-  margin: 20px 75px;
+  margin: 20px auto;
+  width: 200px;
   border-radius: 10px;
   font-weight: bold;
 }
@@ -29,13 +30,29 @@
 .TipsPage button {
   margin-top: 20px;
   margin-bottom: 40px;
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 15%;
-  font-size: 16px;
-  height: 60px;
-  width: 60px;
-  padding: 0;
-  font-weight: bold;
 }
 
+.TipsPage li {
+  margin-bottom: 5px;
+}
+
+@media screen and (min-width: 505px) {
+  .TipsPage header {
+    font-size: 20px;
+  }
+  .TipsPage h1 {
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+  .TipsPage section {
+    margin-right: 10vw;
+    margin-left: 10vw;
+  }
+  .TipsPage li {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 808px) {
+  
+}

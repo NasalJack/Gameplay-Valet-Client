@@ -2,6 +2,7 @@
   background-image: url(./parchment-texture.jpg);
   margin: 10px;
   padding: 10px;
+  border-radius: 5px;
 }
 
 .Note .container {
@@ -28,7 +29,25 @@
   margin: 0;
 }
 
-
 .Note .expand:hover {
   background-color: white;
+}
+
+.Note .edit-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px 30%;
+  background-color: blue;
+}
+
+@media screen and (min-width: 505px) {
+  .Note {
+    margin: 20px 10vw;
+  }
+}
+
+@media screen and (min-width: 808px) {
+  .Note {
+    margin: 20px 20vw;
+  }
 }

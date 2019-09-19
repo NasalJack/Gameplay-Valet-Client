@@ -41,3 +41,21 @@
 .GamesListEntry h2:hover {
   transform: scale(1.1);
 }
+
+@media screen and (min-width: 505px) {
+  .GamesListEntry {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+}
+
+@media screen and (min-width: 808px) {
+  .GamesListEntry {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding: 10px 40px;
+  }
+  .GamesListEntry .short_description {
+    margin-top: 10px;
+  }
+}

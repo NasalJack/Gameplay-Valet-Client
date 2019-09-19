@@ -12,20 +12,50 @@
 
 .NotesPage h2 {
   background-color: yellow;
-  margin: 20px 75px;
+  margin: 20px auto;
+  width: 200px;
   border-radius: 10px;
   font-weight: bold;
 }
 
 .NotesPage .main-page {
   margin-bottom: 40px;
-  margin-top: 20px;
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 15%;
-  font-size: 16px;
-  height: 60px;
-  width: 60px;
-  padding: 0;
-  font-weight: bold;
+  margin-top: 40px;
+}
+
+.NotesPage .note-adder {
+  margin-top: 10px;
+}
+
+.NotesPage .no-note {
+  margin: 5px 10vw;
+  background-image: url(../Note/parchment-texture.jpg);
+  border-radius: 5px;
+}
+
+.NotesPage .edit-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px 40%;
+}
+
+@media screen and (min-width: 505px) {
+  .NotesPage header {
+    font-size: 20px;
+  }
+  .NotesPage h1 {
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+  .NotesPage .no-note {
+    margin: 40px 30vw;
+  }
+
+  .NotesPage .main-page {
+    margin-top: 80px;
+  }
+}
+
+@media screen and (min-width: 808px) {
+  
 }

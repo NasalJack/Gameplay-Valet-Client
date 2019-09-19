@@ -11,15 +11,32 @@ body {
   background-image: url(../../table-background.jpg);
 }
 
+.die {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 15%;
+  font-size: 16px;
+  height: 60px;
+  width: 60px;
+  padding: 0;
+  font-weight: bold;
+}
+
 button:hover, a:hover {
   transform: scale(1.2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 505px) {
+  body {
+    font-size: 24px;
   }
-  to {
-    transform: rotate(360deg);
+  .die {
+    height: 80px;
+    width: 80px;
+    font-size: .9em;
   }
+}
+
+@media screen and (min-width: 808px) {
+
 }

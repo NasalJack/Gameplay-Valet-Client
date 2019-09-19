@@ -1,5 +1,4 @@
 .LandingPage header {
-  font-size: 18px;
   margin: 50px 10px 0px 10px;
 }
 
@@ -9,6 +8,7 @@
 }
 
 .LandingPage h1 {
+  font-size: 1.8em;
   color: black;
   background-color: rgba(7, 135, 135, .8);
   border-radius: 10px;
@@ -17,8 +17,7 @@
 
 .LandingPage .description-background {
   border-radius: 15px;
-  margin-right: 5px;
-  margin-left: 5px;
+  margin: 0 5px;
   padding: 0px;
   background-image: url(../../board-background2.jpg);
   /* background-size: cover; */
@@ -34,14 +33,14 @@
 
 .LandingPage button {
   margin-top: 20px;
-  background-color: white;
+  /* background-color: white;
   border: 1px solid black;
   border-radius: 15%;
   font-size: 16px;
   height: 60px;
   width: 60px;
   padding: 0;
-  font-weight: bold;
+  font-weight: bold; */
 }
 
 .LandingPage .landing-buttons {
@@ -49,3 +48,28 @@
   justify-content: space-around;
 }
 
+@media screen and (min-width: 505px) {
+  .LandingPage header {
+    margin: 5vh auto 5vh auto;
+    width: 500px;
+  }
+  .LandingPage .description-background {
+    margin-left: 10vw !important;
+    margin-right: 10vw !important;
+  }
+  .LandingPage .landing-buttons {
+    margin-top: 5vh;
+    margin-right: 20vw;
+    margin-left: 20vw;
+  }
+}
+
+@media screen and (min-width: 808px) {
+  .LandingPage header {
+    margin: 10vh auto 10vh auto;
+    width: 500px;
+  }
+  .LandingPage .landing-buttons {
+    margin-top: 10vh;
+  }
+}

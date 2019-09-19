@@ -28,3 +28,17 @@
   border-radius: 15px;
   border: 1px solid black;
 }
+
+@media screen and (min-width: 505px) {
+  .MyGamesPage header {
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .MyGamesPage p {
+    margin: 10vh 20vw;
+  }
+}
+
+@media screen and (min-width: 808px) { 
+}

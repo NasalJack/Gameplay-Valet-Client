@@ -77,15 +77,19 @@ class NotesPage extends React.Component {
     const noteAdderForm =  
     <form className="note_adder" onSubmit={(event) => this.handleNoteSubmit(event)}>
       <label>
-        title:
+        title:<br />
         <input name='title' type='text' required></input>
       </label>
+      <br />
       <label>
-        content:
+        content:<br />
         <textarea name='content' required></textarea>
       </label>
-      <button type='submit'>Submit</button>
-      <button type='button' onClick={this.toggleNoteAdder}>Cancel</button>
+      <br />
+      <div className='edit-buttons notes-edit'>
+        <button type='submit'>Submit</button>
+        <button type='button' onClick={this.toggleNoteAdder}>Cancel</button>
+      </div>
     </form>
 
     return (
@@ -96,12 +100,12 @@ class NotesPage extends React.Component {
               <p>{this.state.error}</p>
           </header>
           
-          {notes.length ? noteList : 'No notes yet'}
+          {notes.length ? noteList : <p className='no-note'>Click 'Add Note' below to write your first note</p>}
 
           <section>
-              {!this.state.addingNote ? <button onClick={this.toggleNoteAdder}>Add Note</button> : noteAdderForm}
+              {!this.state.addingNote ? <button className='note-adder' onClick={this.toggleNoteAdder}>Add Note</button> : noteAdderForm}
           </section>
-          <button className='main-page' onClick={this.props.history.goBack}>Main Page</button>
+          <button className='main-page die' onClick={this.props.history.goBack}>Main Page</button>
       </div>
     )
   }

@@ -11,16 +11,16 @@ class LandingPage extends React.Component {
     if(TokenService.hasAuthToken()) {
       bottomButtons = 
         <Link to={'/mygames'}>
-          <button>My Games</button>
+          <button className='die'>My Games</button>
         </Link>
     } else {
       bottomButtons = 
         <>
           <Link to='/login'>
-            <button>Login</button>
+            <button className='die'>Login</button>
           </Link>
           <Link to='/signup'>
-            <button>Signup</button>
+            <button className='die'>Signup</button>
           </Link>
         </>
     }
@@ -42,7 +42,7 @@ class LandingPage extends React.Component {
 
         <section className='landing-buttons'>
           <Link to='/games'>
-            <button>All Games</button>
+            <button className='die'>All Games</button>
           </Link>
 
           {bottomButtons}

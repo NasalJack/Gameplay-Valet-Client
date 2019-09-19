@@ -40,7 +40,7 @@ class TipsPage extends React.Component {
             {tipsList}
           </ul>
         </section>
-        <button onClick={this.props.history.goBack}>Main Page</button>
+        <button className='die' onClick={this.props.history.goBack}>Main Page</button>
       </div>
     )
   }

@@ -12,7 +12,8 @@
 
 .RulesPage h2 {
   background-color: #ff0000;
-  margin: 20px 75px;
+  margin: 20px auto;
+  width: 200px;
   border-radius: 10px;
   font-weight: bold;
 }
@@ -52,14 +53,24 @@
 
 .RulesPage .main-page {
   margin-top: 20px;
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 15%;
-  font-size: 16px;
-  height: 60px;
-  width: 60px;
-  padding: 0;
-  font-weight: bold;
   margin-bottom: 40px;
 }
 
+@media screen and (min-width: 505px) {
+  .RulesPage iframe {
+    height: 80vh;
+  }
+  .RulesPage header {
+    font-size: 20px;
+  }
+  .RulesPage h1 {
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+}
+
+@media screen and (min-width: 808px) {
+  .RulesPage iframe {
+    height: 90vh;
+  }
+}
