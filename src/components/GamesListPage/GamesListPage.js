@@ -8,7 +8,6 @@ class GamesListPage extends React.Component {
   componentDidMount() {
     const clearFilter= {target: {value: ''}}
     this.props.filterList(clearFilter)
-    console.log(clearFilter.target.value)
   }
 
   render() {
