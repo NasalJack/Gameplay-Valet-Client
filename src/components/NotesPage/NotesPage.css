@@ -39,6 +39,11 @@
   margin: 5px 40%;
 }
 
+.NotesPage textarea {
+  min-width: 40vw;
+  min-height: 10vh;
+}
+
 @media screen and (min-width: 505px) {
   .NotesPage header {
     font-size: 20px;
@@ -57,5 +62,7 @@
 }
 
 @media screen and (min-width: 808px) {
-  
+  .NotesPage textarea {
+    min-height: 20vh;
+  }
 }

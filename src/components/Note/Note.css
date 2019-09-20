@@ -40,6 +40,11 @@
   background-color: blue;
 }
 
+.Note textarea {
+  min-width: 40vw;
+  min-height: 10vh;
+}
+
 @media screen and (min-width: 505px) {
   .Note {
     margin: 20px 10vw;
@@ -49,5 +54,8 @@
 @media screen and (min-width: 808px) {
   .Note {
     margin: 20px 20vw;
+  }
+  .Note textarea {
+    min-height: 20vh;
   }
 }
