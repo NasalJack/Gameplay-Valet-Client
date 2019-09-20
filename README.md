@@ -14,6 +14,15 @@ All React components are stored in /src/components inside a folder named for the
 
 All API fetch requests are handled by the files contained in /src/services
 
+## Technologies
+
+This app was developed using
+* React
+* JSX
+* AJAX
+* NodeJS
+* Postgres
+
 ## Screenshots
 
 <img width="1440" alt="Screen Shot 2019-09-20 at 3 56 27 PM" src="https://user-images.githubusercontent.com/47227929/65355728-96b29300-dbc0-11e9-9d1f-2da0c7934a88.png">
