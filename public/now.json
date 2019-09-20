@@ -12,6 +12,10 @@
       "dest": "/manifest.json"
     },
     {
+      "src": "^/logo192.png",
+      "dest": "/logo192.png"
+    },
+    {
       "src": ".*",
       "dest": "/index.html"
     }
