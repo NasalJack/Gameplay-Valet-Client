@@ -6,7 +6,9 @@ import './GamesListPage.css';
 class GamesListPage extends React.Component {
 
   componentDidMount() {
-    this.props.filterList('')
+    const clearFilter= {target: {value: ''}}
+    this.props.filterList(clearFilter)
+    console.log(clearFilter.target.value)
   }
 
   render() {
