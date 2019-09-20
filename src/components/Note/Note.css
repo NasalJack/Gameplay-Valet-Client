@@ -37,7 +37,6 @@
   display: flex;
   justify-content: space-around;
   margin: 5px 30%;
-  background-color: blue;
 }
 
 .Note textarea {
