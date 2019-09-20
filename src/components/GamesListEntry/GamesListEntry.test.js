@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from './App';
+import GamesListEntry from './GamesListEntry';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, div);
+  ReactDOM.render(<BrowserRouter><GamesListEntry key={1} id={1} title={'title'} short_description={'short_description'} rating={1} genres={'genres'}/></BrowserRouter>, div);
   ReactDOM.unmountComponentAtNode(div);
 });

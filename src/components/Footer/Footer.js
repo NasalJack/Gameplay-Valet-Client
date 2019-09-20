@@ -6,8 +6,6 @@ import TokenService from '../../services/token-service';
 import './Footer.css'
 
 class Footer extends React.Component {
-  
-
   render() {
     const route='/game/'+this.props.match.params.id
     return(
