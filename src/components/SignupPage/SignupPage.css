@@ -28,14 +28,6 @@
 
 .SignupPage button {
     margin-top: 20px;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 15%;
-    font-size: 16px;
-    height: 60px;
-    width: 60px;
-    padding: 0;
-    font-weight: bold;
 }
 
 .SignupPage input {
@@ -45,5 +37,23 @@
 .SignupPage .button-box {
   display: flex;
   justify-content: space-around;
+}
+
+@media screen and (min-width: 505px) {
+  .SignupPage header {
+    margin: 45px 20vw 60px 20vw;
+  }
+  .SignupPage .input-fields-background, header {
+    margin-left: 20vw;
+    margin-right: 20vw;
+  }
+  .SignupPage input {
+    margin-bottom: 20px;
+  }
+  .SignupPage .button-box {
+    margin-top: 60px;
+    margin-right: 30vw;
+    margin-left: 30vw;
+  }
 }
 

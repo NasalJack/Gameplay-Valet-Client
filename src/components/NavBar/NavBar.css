@@ -26,6 +26,7 @@
 @media screen and (min-width: 505px) {
   .NavBar {
     padding: 5px 5vw;
+    font-size: 20px;
   }
 }
 

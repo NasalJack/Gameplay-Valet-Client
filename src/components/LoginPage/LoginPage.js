@@ -53,7 +53,7 @@ class LoginPage extends React.Component {
                   <label>
                     Username:
                     <input name="user_name" required type="text" />
-                  </label>
+                  </label><br />
                   <label className="password">
                       Password:
                       <input type="password" name="password" required />
@@ -61,9 +61,9 @@ class LoginPage extends React.Component {
                 </div>
               </div>
               <div className='button-box'>
-                <button type="submit">Submit</button>
+                <button type="submit" className="die">Submit</button>
                 <Link to='/signup'>
-                  <button type='button' className="alternative">Signup instead</button>
+                  <button type='button' className="alternative die">Signup instead</button>
                 </Link>
               </div>
           </form>
