@@ -4,6 +4,11 @@ import GamesListEntry from '../GamesListEntry/GamesListEntry'
 
 import './GamesListPage.css';
 class GamesListPage extends React.Component {
+
+  componentDidMount() {
+    this.props.filterList('')
+  }
+
   render() {
     const { list, filterFor } = this.props;
     const filteredGames = list.filter(game => 
