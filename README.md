@@ -13,6 +13,7 @@ All React components are stored in /src/components inside a folder named for the
 ### API Services
 
 All API fetch requests are handled by the files contained in /src/services
+The API endpoint accessed is https://fathomless-temple-50861.herokuapp.com/api
 
 ## Technologies
 
