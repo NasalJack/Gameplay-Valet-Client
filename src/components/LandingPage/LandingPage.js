@@ -37,6 +37,9 @@ class LandingPage extends React.Component {
             Welcome to Gameplay Valet, your one stop resource for all your board gaming reference needs.
             To get started you can go directly to the Games page where you can get rules and tips for every game, or
             create an account to manage a list of your personal games and write notes for each game.
+
+            Instead of registering you can use this example user
+            username: username, password: password
           </div>
         </section>
 

@@ -16,6 +16,14 @@
       "dest": "/logo192.png"
     },
     {
+      "src": "^/logo512.png",
+      "dest": "/logo512.png"
+    },
+    {
+      "src": "^/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
       "src": ".*",
       "dest": "/index.html"
     }

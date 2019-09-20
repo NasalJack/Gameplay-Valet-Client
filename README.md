@@ -18,10 +18,12 @@ All API fetch requests are handled by the files contained in /src/services
 
 This app was developed using
 * React
+* CSS
 * JSX
 * AJAX
+* Express
 * NodeJS
-* Postgres
+* PostgreSQL
 
 ## Screenshots
 
