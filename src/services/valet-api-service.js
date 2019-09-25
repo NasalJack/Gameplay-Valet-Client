@@ -71,29 +71,38 @@ const ValetApiService = {
     .then(res => (!res.ok) ? res.json().then(e=> Promise.reject(e)) : res)
   },
   checkGameListStatus(gameId) {
-    return fetch(`${this.url}/junction/user/${TokenService.getUserToken()}/game/${gameId}`, {
+    const userToken = TokenService.getUserToken();
+    const authToken = TokenService.getAuthToken();
+    if (userToken === null) return
+    return fetch(`${this.url}/junction/user/${userToken}/game/${gameId}`, {
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`
+        'authorization': `bearer ${authToken}`
       }
     })
     .then(res => (!res.ok) ? res.json().then(e=> Promise.reject(e)) : res.json())
   },
   addGameToList(gameId) {
-    return fetch(`${this.url}/junction/user/${TokenService.getUserToken()}/game/${gameId}`, {
+    const userToken = TokenService.getUserToken();
+    const authToken = TokenService.getAuthToken();
+    if (userToken === null) return
+    return fetch(`${this.url}/junction/user/${userToken}/game/${gameId}`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'authorization': `bearer ${TokenService.getAuthToken()}`
+        'authorization': `bearer ${authToken}`
       }
     })
     .then(res => (!res.ok) ? res.json().then(e=> Promise.reject(e)) : res.json())
   },
   removeGameFromList(gameId) {
-    return fetch(`${this.url}/junction/user/${TokenService.getUserToken()}/game/${gameId}`, {
+    const userToken = TokenService.getUserToken();
+    const authToken = TokenService.getAuthToken();
+    if (userToken === null) return
+    return fetch(`${this.url}/junction/user/${userToken}/game/${gameId}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
-        'authorization': `bearer ${TokenService.getAuthToken()}`
+        'authorization': `bearer ${authToken}`
       }
     })
     .then(res => (!res.ok) ? res.json().then(e=> Promise.reject(e)) : res.json())
