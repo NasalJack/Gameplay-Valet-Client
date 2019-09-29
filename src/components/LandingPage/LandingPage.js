@@ -41,7 +41,7 @@ class LandingPage extends React.Component {
             <p className='login-info'>
               Instead of registering you can use this example user instead
               <br />
-              <p className='italics'>"username: username, password: password"</p>
+              <p className='italics'>username: username, password: password</p>
             </p>
           </div>
         </section>
