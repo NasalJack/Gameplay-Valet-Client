@@ -48,6 +48,11 @@
   justify-content: space-around;
 }
 
+.LandingPage .login-info {
+  margin-top: 10px;
+  font-style: italic;
+}
+
 @media screen and (min-width: 505px) {
   .LandingPage header {
     margin: 5vh auto 5vh auto;
