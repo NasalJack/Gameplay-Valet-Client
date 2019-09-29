@@ -50,6 +50,9 @@
 
 .LandingPage .login-info {
   margin-top: 10px;
+}
+
+.LandingPage .italics {
   font-style: italic;
 }
 
