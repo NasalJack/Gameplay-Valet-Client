@@ -5,6 +5,7 @@
 .LandingPage .h1-background {
   border-radius: 10px;
   background-image: url(../../board-background2.jpg);
+  box-shadow: 3px 3px 6px;
 }
 
 .LandingPage h1 {
@@ -20,6 +21,7 @@
   margin: 0 5px;
   padding: 0px;
   background-image: url(../../board-background2.jpg);
+  box-shadow: 3px 3px 6px;
   /* background-size: cover; */
 }
 

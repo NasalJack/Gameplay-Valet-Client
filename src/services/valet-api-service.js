@@ -73,7 +73,6 @@ const ValetApiService = {
   checkGameListStatus(gameId) {
     const userToken = TokenService.getUserToken();
     const authToken = TokenService.getAuthToken();
-    if (userToken === null) return
     return fetch(`${this.url}/junction/user/${userToken}/game/${gameId}`, {
       headers: {
         'authorization': `bearer ${authToken}`

@@ -3,6 +3,7 @@
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
+  box-shadow: 3px 3px 6px;
 }
 
 .Note .container {

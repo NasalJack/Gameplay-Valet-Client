@@ -4,6 +4,7 @@
   font-size: 16px;
   background-image: url(../../board-background2.jpg);
   border-radius: 15px;
+  box-shadow: 3px 3px 6px;
 }
 
 .LoginPage h1 {
@@ -16,6 +17,7 @@
   background-image: url(../../board-background2.jpg);
   border-radius: 15px;
   margin: 0 5px;
+  box-shadow: 3px 3px 6px;
 }
 
 .LoginPage .input-fields {

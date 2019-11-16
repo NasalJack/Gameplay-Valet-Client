@@ -20,6 +20,7 @@ body {
   width: 60px;
   padding: 0;
   font-weight: bold;
+  box-shadow: 3px 3px 6px;
 }
 
 button:hover, a:hover {

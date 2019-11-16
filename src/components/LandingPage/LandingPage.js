@@ -38,11 +38,11 @@ class LandingPage extends React.Component {
             To get started you can go directly to the Games page where you can get rules and tips for every game, or
             create an account to manage a list of your personal games and write notes for each game.
             <br />
-            <p className='login-info'>
+            <div className='login-info'>
               Instead of registering you can use this example user instead
               <br />
               <p className='italics'>username: username, password: password</p>
-            </p>
+            </div>
           </div>
         </section>
 

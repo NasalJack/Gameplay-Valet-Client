@@ -3,6 +3,7 @@
   padding: 10px;
   border-radius: 10px;
   border: solid black 1px;
+  box-shadow: 3px 3px 6px;
 }
 
 .GamesListEntry ul {
